@@ -47,11 +47,21 @@ extern "C" int main(void)
 	  line = display.line(i)->to_string();
   }
 
+  // Test console log
+  uint8_t msg[5] = {0};
+  int counter = 0;
+
   while (1)
   {
-	DEV_Delay_ms(200);
+	DEV_Delay_ms(100);
 	led.toggle();
 
+	for(int i=0; i<5; i++) {
+		msg[i] = counter++;
+		counter %= 256;
+	}
+
+	Console_Log(msg, 5);
   }
 }
 

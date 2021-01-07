@@ -33,10 +33,10 @@
 #define SWO_GPIO_Port GPIOB
 
 void DEV_Init(void);
-
 uint8_t DEV_Digital_Read(uint8_t pin);
 void DEV_Digital_Write(uint8_t pin, uint8_t state);
 void DEV_SPI_WriteByte(uint8_t byte);
+void Console_Log(uint8_t *msg, uint16_t size);
 
 #ifdef __cplusplus
 }

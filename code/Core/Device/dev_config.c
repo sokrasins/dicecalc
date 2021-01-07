@@ -85,6 +85,12 @@ static void MX_USART2_UART_Init(void)
   }
 }
 
+void Console_Log(uint8_t *msg, uint16_t size) {
+	uint8_t eol[] = {0xFF, 0xFF};
+	HAL_UART_Transmit(&huart2, msg, size, 0xFFFF);
+	HAL_UART_Transmit(&huart2, eol, 2, 0xFFFF);
+}
+
 /**
   * @brief GPIO Initialization Function
   * @param None
