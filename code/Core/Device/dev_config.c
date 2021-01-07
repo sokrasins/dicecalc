@@ -10,11 +10,13 @@
 #include "main.h"
 #include "stm32f4xx_hal.h"
 
-UART_HandleTypeDef huart2;
+static UART_HandleTypeDef huart2;
+static SPI_HandleTypeDef hspi1;
 
 static void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_SPI1_Init(void);
 
 void DEV_Init(void) {
 	HAL_Init();
@@ -24,6 +26,8 @@ void DEV_Init(void) {
 	MX_GPIO_Init();
 
 	MX_USART2_UART_Init();
+
+	MX_SPI1_Init();
 }
 
 // Set up MCU clock
@@ -68,6 +72,43 @@ static void SystemClock_Config(void)
   }
 }
 
+static void MX_SPI1_Init(void) {
+  __SPI1_CLK_ENABLE();
+
+  hspi1.Instance = SPI1;
+  hspi1.Init.Mode = SPI_MODE_MASTER;
+  hspi1.Init.Direction = SPI_DIRECTION_2LINES;
+  hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
+  hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
+  hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi1.Init.NSS = SPI_NSS_SOFT;
+  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
+  hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
+  hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
+  hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+  hspi1.Init.CRCPolynomial = 10;
+
+  if (HAL_SPI_Init(&hspi1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  GPIO_InitStruct.Pin = EPD_SCK_PIN|EPD_MOSI_PIN;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Pin = EPD_MISO_PIN;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+}
+
 // Set up- MCU debug UART
 static void MX_USART2_UART_Init(void)
 {
@@ -98,31 +139,15 @@ void Console_Log(uint8_t *msg, uint16_t size) {
   */
 static void MX_GPIO_Init(void)
 {
-  //GPIO_InitTypeDef GPIO_InitStruct = {0};
-
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
-
-
-  /*Configure GPIO pin Output Level */
-  //HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : B1_Pin */
-  //GPIO_InitStruct.Pin = B1_Pin;
-  //GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  //GPIO_InitStruct.Pull = GPIO_NOPULL;
-  //HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : LD2_Pin */
-  //GPIO_InitStruct.Pin = LD2_Pin;
-  //GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  //GPIO_InitStruct.Pull = GPIO_NOPULL;
-  //GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  //HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
-
 }
 
+void DEV_SPI_WriteByte(uint8_t byte) {
+	// TODO: Accept return val
+	HAL_SPI_Transmit(&hspi1, &byte, 1, 0xFFFF);
+}

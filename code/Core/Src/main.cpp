@@ -15,8 +15,8 @@ extern "C" int main(void)
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   DEV_Init();
 
-  Gpio led = Gpio(LD2_GPIO_Port, LD2_Pin);
-  led.enable(GPIO_OUTPUT);
+  //Gpio led = Gpio(LD2_GPIO_Port, LD2_Pin);
+  //led.enable(GPIO_OUTPUT);
 
   /* Initialize all configured peripherals */
 
@@ -54,14 +54,15 @@ extern "C" int main(void)
   while (1)
   {
 	DEV_Delay_ms(100);
-	led.toggle();
+	//led.toggle();
 
 	for(int i=0; i<5; i++) {
-		msg[i] = counter++;
+		DEV_SPI_WriteByte(counter++);
 		counter %= 256;
+		DEV_Delay_ms(10);
 	}
 
-	Console_Log(msg, 5);
+	//Console_Log(msg, 150);
   }
 }
 
