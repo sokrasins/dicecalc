@@ -1,2 +1,5 @@
 *.zip
 *bak
+
+code/Debug
+code/Release
