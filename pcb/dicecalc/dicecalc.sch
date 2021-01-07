@@ -3343,4 +3343,6 @@ Text Notes 700  8500 0    50   ~ 0
 D100 Needs to move to PD2
 Text Notes 3300 8200 0    50   ~ 0
 PD2 Located here
+Text Notes 5200 9850 0    50   ~ 0
+CLRs: Move to other place
 $EndSCHEMATC

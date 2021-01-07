@@ -122,9 +122,11 @@
 #define KEY_ENTER_PORT	GPIOA
 #define KEY_ENTER_PIN	GPIO_PIN_10
 
+// TODO: Collides with UART. Move.
 #define KEY_CLRALL_PORT	GPIOA
 #define KEY_CLRALL_PIN	GPIO_PIN_2
 
+// TODO: Collides with UART. Move.
 #define KEY_CLRLINE_PORT GPIOA
 #define KEY_CLRLINE_PIN	GPIO_PIN_3
 
