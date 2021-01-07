@@ -1,0 +1,16 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"C1,C3";"C_0805_2012Metric_Pad1.15x1.40mm_HandSolder";2;"10uF";;;
+2;"C2";"C_0603_1608Metric_Pad1.05x0.95mm_HandSolder";1;"22pF";;;
+3;"C4";"C_0603_1608Metric_Pad1.05x0.95mm_HandSolder";1;"0.47uF";;;
+4;"C5,C6";"C_0603_1608Metric_Pad1.05x0.95mm_HandSolder";2;"0.1uF";;;
+5;"D1,D2";"D_SOD-123";2;"D_Schottky";;;
+6;"D3,D4";"D_DO-35_SOD27_P7.62mm_Horizontal";2;"D_Zener";;;
+7;"J1";"PinSocket_1x04_P2.54mm_Vertical";1;"Conn_01x04_Male";;;
+8;"L1";"L_0805_2012Metric_Pad1.15x1.40mm_HandSolder";1;"10uH";;;
+9;"R1";"R_0603_1608Metric_Pad1.05x0.95mm_HandSolder";1;"2.2M";;;
+10;"R2";"R_0603_1608Metric_Pad1.05x0.95mm_HandSolder";1;"160k";;;
+11;"R3,R4,R5";"R_0603_1608Metric_Pad1.05x0.95mm_HandSolder";3;"10k";;;
+12;"TP2,TP3,TP1";"TestPoint_THTPad_D1.0mm_Drill0.5mm";3;"TestPoint";;;
+13;"U1";"SOT-23-5";1;"TPS61041DBV";;;
+14;"U2";"SOIC-8_3.9x4.9mm_P1.27mm";1;"LM358";;;
+15;"U3";"SOT-23-5";1;"TLV3201";;;
