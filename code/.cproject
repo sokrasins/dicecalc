@@ -52,7 +52,7 @@
 									<listOptionValue builtIn="false" value="../Core/Keyboard"/>
 									<listOptionValue builtIn="false" value="../Core/Display"/>
 									<listOptionValue builtIn="false" value="../Core/Device"/>
-									<listOptionValue builtIn="false" value="../Core/Gpio"/>
+									<listOptionValue builtIn="false" value="../Core/RNG"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.237605033" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -75,7 +75,7 @@
 									<listOptionValue builtIn="false" value="../Core/Keyboard"/>
 									<listOptionValue builtIn="false" value="../Core/Display"/>
 									<listOptionValue builtIn="false" value="../Core/Device"/>
-									<listOptionValue builtIn="false" value="../Core/Gpio"/>
+									<listOptionValue builtIn="false" value="../Core/RNG"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.1250257912" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp"/>
 							</tool>

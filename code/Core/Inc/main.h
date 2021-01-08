@@ -35,6 +35,8 @@ extern "C" {
 
 /* USER CODE END Includes */
 
+void entropy_cb(void);
+
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 

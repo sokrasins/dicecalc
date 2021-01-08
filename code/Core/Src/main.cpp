@@ -8,15 +8,26 @@
 #include "Keyboard.h"
 #include "Console.h"
 #include "EPD.h"
+#include "Entropy.h"
 
-ExpressionDisplay expression_list = ExpressionDisplay();
-//Spi test_spi;
+ExpressionDisplay expression_list;
+
+Entropy ent;
+
+// Interface between timer ISR and entropy object
+void entropy_cb(void) {
+	ent.interrupt_cb();
+}
 
 // MAIN
 extern "C" int main(void)
 {
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   DEV_Init();
+
+  expression_list = ExpressionDisplay();
+  ent = Entropy();
+  ent.open();
 
   /* Initialize all configured peripherals */
   Epaper disp = Epaper();
@@ -52,6 +63,8 @@ extern "C" int main(void)
   while (1)
   {
     Delay_ms(1000);
+    ent.clear_samps();
+    ent.collect();
   }
 }
 
