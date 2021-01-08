@@ -11,23 +11,17 @@
 #include "stm32f4xx_hal.h"
 
 static UART_HandleTypeDef huart2;
-static SPI_HandleTypeDef hspi1;
 
 static void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
-static void MX_SPI1_Init(void);
 
 void DEV_Init(void) {
 	HAL_Init();
-
 	SystemClock_Config();
-
 	MX_GPIO_Init();
-
 	MX_USART2_UART_Init();
-
-	MX_SPI1_Init();
+	//MX_SPI1_Init();
 }
 
 // Set up MCU clock
@@ -72,9 +66,8 @@ static void SystemClock_Config(void)
   }
 }
 
-static void MX_SPI1_Init(void) {
-  __SPI1_CLK_ENABLE();
-
+HAL_StatusTypeDef MX_SPI_Init(SPI_HandleTypeDef *handle) {
+	/*
   hspi1.Instance = SPI1;
   hspi1.Init.Mode = SPI_MODE_MASTER;
   hspi1.Init.Direction = SPI_DIRECTION_2LINES;
@@ -92,21 +85,8 @@ static void MX_SPI1_Init(void) {
   {
     Error_Handler();
   }
-
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-  GPIO_InitStruct.Pin = EPD_SCK_PIN|EPD_MOSI_PIN;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-  GPIO_InitStruct.Pin = EPD_MISO_PIN;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  */
+  return HAL_SPI_Init(handle);
 }
 
 // Set up- MCU debug UART
@@ -149,5 +129,5 @@ static void MX_GPIO_Init(void)
 
 void DEV_SPI_WriteByte(uint8_t byte) {
 	// TODO: Accept return val
-	HAL_SPI_Transmit(&hspi1, &byte, 1, 0xFFFF);
+	//HAL_SPI_Transmit(&hspi1, &byte, 1, 0xFFFF);
 }

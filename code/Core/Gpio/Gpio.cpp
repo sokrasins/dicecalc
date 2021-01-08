@@ -7,7 +7,7 @@
 
 #include "Gpio.h"
 
-void Gpio::set_pin(GPIO_TypeDef *port, uint8_t pin) {
+void Gpio::set_pin(GPIO_TypeDef *port, uint16_t pin) {
 	this->m_port = port;
 	this->m_pin = pin;
 }

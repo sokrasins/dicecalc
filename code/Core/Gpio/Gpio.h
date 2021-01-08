@@ -17,15 +17,15 @@ enum GpioMode {
 };
 
 class Gpio {
-	uint8_t m_pin;
+	uint16_t m_pin;
 	GPIO_TypeDef  *m_port;
 	bool enabled;
 	GpioMode m_mode;
 
 public:
 	Gpio() : m_pin(0), m_port(GPIOA), enabled(false) {};
-	Gpio(GPIO_TypeDef *port, uint8_t pin) : m_pin(pin), m_port(port), enabled(false) {};
-	void set_pin(GPIO_TypeDef *port, uint8_t pin);
+	Gpio(GPIO_TypeDef *port, uint16_t pin) : m_pin(pin), m_port(port), enabled(false) {};
+	void set_pin(GPIO_TypeDef *port, uint16_t pin);
 	void enable(GpioMode mode);
 
 	/* Input */

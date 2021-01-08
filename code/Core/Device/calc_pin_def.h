@@ -10,6 +10,11 @@
 
 #include "stm32f4xx_hal.h"
 
+// Define pins for debug UART port
+#define DEBUG_USART_PORT GPIOA
+#define DEBUG_USART_TX_Pin GPIO_PIN_2
+#define DEBUG_USART_RX_Pin GPIO_PIN_3
+
 // Entropy source pins
 #define ENT_SOURCE_PORT	GPIOB
 #define ENT_SOURCE_PIN	GPIO_PIN_10
@@ -30,13 +35,9 @@
 #define EPD_BUSY_PORT   GPIOA
 #define EPD_BUSY_PIN 	GPIO_PIN_8
 
-#define EPD_SCK_PORT	GPIOA
+#define EPD_SPI_PORT	GPIOA
 #define EPD_SCK_PIN		GPIO_PIN_5
-
-#define EPD_MOSI_PORT	GPIOA
 #define EPD_MOSI_PIN	GPIO_PIN_7
-
-#define EPD_MISO_PORT	GPIOA
 #define EPD_MISO_PIN	GPIO_PIN_6
 
 // Keypad pins

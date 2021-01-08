@@ -6,17 +6,21 @@
 #include "Gpio.h"
 #include "KeyEvent.h"
 #include "Keyboard.h"
+#include "EPD.h"
 
 ExpressionDisplay display = ExpressionDisplay();
+//Spi test_spi;
 
 // MAIN
 extern "C" int main(void)
 {
+
+  Spi test_spi;
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   DEV_Init();
 
-  //Gpio led = Gpio(LD2_GPIO_Port, LD2_Pin);
-  //led.enable(GPIO_OUTPUT);
+  Epaper paper = Epaper();
+  paper.open();
 
   /* Initialize all configured peripherals */
 
@@ -47,22 +51,10 @@ extern "C" int main(void)
 	  line = display.line(i)->to_string();
   }
 
-  // Test console log
-  uint8_t msg[5] = {0};
-  int counter = 0;
-
   while (1)
   {
-	DEV_Delay_ms(100);
-	//led.toggle();
-
-	for(int i=0; i<5; i++) {
-		DEV_SPI_WriteByte(counter++);
-		counter %= 256;
-		DEV_Delay_ms(10);
-	}
-
-	//Console_Log(msg, 150);
+	Delay_ms(1000);
+	paper.clear();
   }
 }
 
