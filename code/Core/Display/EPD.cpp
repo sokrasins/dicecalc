@@ -9,8 +9,7 @@
 
 #include <stdint.h>
 
-#include "calc_pin_def.h"
-#include "dev_config.h"
+#include "Device.h"
 
 const unsigned char Epaper::full_update_lut[]= {
     0x80,0x60,0x40,0x00,0x00,0x00,0x00,             //LUT0: BB:     VS 0 ~7
@@ -100,7 +99,7 @@ void Epaper::turn_on_display() {
 	this->send_cmd(0x22);
 	this->send_data(0xC7);
 	this->send_cmd(0x20);
-	//this->wait_until_idle();
+	this->wait_until_idle();
 }
 
 void Epaper::turn_on_display_part() {

@@ -18,7 +18,7 @@
   ******************************************************************************
   */
 
-#include "dev_config.h"
+#include <Device.h>
 
 /**
   * Initializes the Global MSP.
@@ -86,6 +86,7 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef *hspi) {
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
 	if (hspi->Instance==SPI1) {
 		/* Peripheral clock enable */
+		__HAL_RCC_SPI1_CLK_ENABLE();
 
 		__HAL_RCC_GPIOA_CLK_ENABLE();
 

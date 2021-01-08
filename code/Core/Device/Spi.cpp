@@ -10,10 +10,10 @@
 #include <stdint.h>
 #include <string.h>
 
-//#include "stm32f4xx_hal.h"
-#include "dev_config.h"
+#include "Device.h"
 
 Spi::Spi() {
+	this->m_spi = {0};
 	this->m_spi.State = HAL_SPI_STATE_RESET;
 	this->m_spi.Init.Mode = SPI_MODE_MASTER;
 	this->m_spi.Init.Direction = SPI_DIRECTION_2LINES;
@@ -31,9 +31,8 @@ Spi::Spi() {
 bool Spi::open(SPI_TypeDef *instance) {
 	if (instance == SPI1) {
 		this->m_spi.Instance = instance;
-		__HAL_RCC_SPI1_CLK_ENABLE();
 
-		if (MX_SPI_Init(&(this->m_spi)) != HAL_OK) {
+		if (HAL_SPI_Init(&(this->m_spi)) != HAL_OK) {
 			return false;
 		}
 		return true;

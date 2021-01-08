@@ -62,8 +62,8 @@
 * THE SOFTWARE.
 *
 ******************************************************************************/
+#include <Device.h>
 #include "GUI_Paint.h"
-#include "dev_config.h"
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h> //memset()

@@ -13,7 +13,7 @@
 
 #include <stdint.h>
 
-#include "Gpio.h"
+#include <Gpio.h>
 #include "Spi.h"
 
 enum UpdateMode {

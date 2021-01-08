@@ -5,7 +5,7 @@
  *      Author: sok
  */
 
-#include "Gpio.h"
+#include <Gpio.h>
 
 void Gpio::set_pin(GPIO_TypeDef *port, uint16_t pin) {
 	this->m_port = port;

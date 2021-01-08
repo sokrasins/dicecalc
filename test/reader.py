@@ -44,6 +44,8 @@ class Reader:
         # Set up serial port. Choose the first valid device.
         self.ser = None
         self.ser = Serial(ports[0].device, 115200)
+        self.ser.flushInput()
+        self.ser.flushOutput()
 
         # Star thread to auto-read 
         self.thread = Reader.ReadThread(self.ser, eol, rx_cb)

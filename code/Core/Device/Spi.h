@@ -8,7 +8,7 @@
 #ifndef DEVICE_SPI_H_
 #define DEVICE_SPI_H_
 
-#include "stm32f4xx_hal.h"
+#include "Device.h"
 
 class Spi {
 	SPI_HandleTypeDef m_spi;

@@ -65,9 +65,9 @@
 #ifndef __GUI_PAINT_H
 #define __GUI_PAINT_H
 
+#include <Device.h>
 #include <stdint.h>
 
-#include "dev_config.h"
 #include "fonts.h"
 
 /**

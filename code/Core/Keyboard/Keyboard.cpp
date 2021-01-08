@@ -7,7 +7,7 @@
 
 #include "Keyboard.h"
 
-#include "calc_pin_def.h"
+#include "Device.h"
 #include "KeyEvent.h"
 
 uint16_t Keyboard::KEY_PINS[NUM_KEYS] = {

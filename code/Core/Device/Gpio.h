@@ -5,12 +5,12 @@
  *      Author: sok
  */
 
-#ifndef GPIO_GPIO_H_
-#define GPIO_GPIO_H_
+#ifndef DEVICE_GPIO_H_
+#define DEVICE_GPIO_H_
 
 #include <stdint.h>
 
-#include "stm32f4xx_hal.h"
+#include "Device.h"
 
 enum GpioMode {
 	GPIO_INPUT, GPIO_OUTPUT
@@ -36,4 +36,4 @@ public:
 	void toggle();
 };
 
-#endif /* GPIO_GPIO_H_ */
+#endif /* DEVICE_GPIO_H_ */
