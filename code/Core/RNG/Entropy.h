@@ -16,10 +16,15 @@
 #define ENTROPY_MAX_SAMPLES 1024
 #define ENTROPY_BYTES (ENTROPY_MAX_SAMPLES / 8)
 
+#define ENTROPY_POLL_RATE 128000 //Hz Min: 1300
+#define ENTROPY_ENABLE_TIME 5 //ms
+#define ENTROPY_MAX_SAMPLE_TIME 12 //ms
+
 class Entropy {
 	TIM_HandleTypeDef m_tim;
 	Gpio m_source_pin;
 	Gpio m_source_enable_pin;
+	Gpio m_test_pin;
 	uint16_t m_num_samps;
 	uint8_t m_samps[ENTROPY_BYTES];
 
@@ -35,8 +40,9 @@ public:
 	void enable();
 	void interrupt_cb();
 	void collect();
-
 	void clear_samps();
+
+
 };
 
 #endif /* RNG_ENTROPY_H_ */

@@ -659,4 +659,8 @@ F 3 "https://www.ti.com/lit/ds/symlink/lmv7219.pdf" H 9050 3500 50  0001 C CNN
 	1    9050 3300
 	1    0    0    -1  
 $EndComp
+Text Notes 8150 2500 0    100  ~ 0
+Connect to other diode terminal\n
+Text Notes 8150 4050 0    100  ~ 0
+Connect to other diode terminal
 $EndSCHEMATC
