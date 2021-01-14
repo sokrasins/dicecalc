@@ -13,7 +13,7 @@
 #include "Device.h"
 #include "Gpio.h"
 
-#define ENTROPY_MAX_SAMPLES 1024
+#define ENTROPY_MAX_SAMPLES 512
 #define ENTROPY_BYTES (ENTROPY_MAX_SAMPLES / 8)
 
 #define ENTROPY_POLL_RATE 128000 //Hz Min: 1300
@@ -24,9 +24,9 @@ class Entropy {
 	TIM_HandleTypeDef m_tim;
 	Gpio m_source_pin;
 	Gpio m_source_enable_pin;
-	Gpio m_test_pin;
 	uint16_t m_num_samps;
 	uint8_t m_samps[ENTROPY_BYTES];
+	bool m_collecting;
 
 	//void clear_samps();
 	void add_new_sample(uint8_t samp);
@@ -35,6 +35,7 @@ public:
 	Entropy();
 	void open();
 	uint16_t num_samps() { return m_num_samps; };
+	bool collecting() { return this->m_collecting; };
 	uint16_t get_samps(uint8_t *dest);
 	void sample();
 	void enable();

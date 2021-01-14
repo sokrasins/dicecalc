@@ -98,11 +98,13 @@
 #define KEY_D_PORT		GPIOC
 #define KEY_D_PIN		GPIO_PIN_6
 
-#define KEY_D4_PORT		GPIOA
-#define KEY_D4_PIN		GPIO_PIN_13
+// TODO: change, used by debugger
+#define KEY_D4_PORT		GPIOC		// GPIOA
+#define KEY_D4_PIN		GPIO_PIN_9 //GPIO_PIN_13
 
-#define KEY_D6_PORT		GPIOA
-#define KEY_D6_PIN		GPIO_PIN_14
+// TODO: change, used by debugger
+#define KEY_D6_PORT		GPIOB		//GPIOA
+#define KEY_D6_PIN		GPIO_PIN_8 //GPIO_PIN_14
 
 #define KEY_D8_PORT		GPIOA
 #define KEY_D8_PIN		GPIO_PIN_15
@@ -124,12 +126,12 @@
 #define KEY_ENTER_PIN	GPIO_PIN_10
 
 // TODO: Collides with UART. Move.
-#define KEY_CLRALL_PORT	GPIOA
-#define KEY_CLRALL_PIN	GPIO_PIN_2
+#define KEY_CLRALL_PORT	GPIOC
+#define KEY_CLRALL_PIN	GPIO_PIN_9
 
 // TODO: Collides with UART. Move.
-#define KEY_CLRLINE_PORT GPIOA
-#define KEY_CLRLINE_PIN	GPIO_PIN_3
+#define KEY_CLRLINE_PORT GPIOB
+#define KEY_CLRLINE_PIN	GPIO_PIN_8
 
 #define KEY_BKSPC_PORT	GPIOC
 #define KEY_BKSPC_PIN	GPIO_PIN_8

@@ -19,6 +19,7 @@ class Key {
 public:
 	Key() {};
 	Key(KeyType type, GPIO_TypeDef* port, uint16_t pin);
+	void open();
 	KeyType get_type() { return this->m_type; };
 	bool pressed();
 };
@@ -32,6 +33,7 @@ class Keyboard {
 	Key m_keys[NUM_KEYS];
 public:
 	Keyboard();
+	void open();
 	bool check_for_changes(KeyEvent* event);
 };
 

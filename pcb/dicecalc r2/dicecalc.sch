@@ -2951,17 +2951,6 @@ Wire Wire Line
 Text GLabel 10700 6300 2    50   Output ~ 0
 KEY_F4
 $Comp
-L Connector:Conn_01x19_Female J3
-U 1 1 602E5EA4
-P 7150 8950
-F 0 "J3" H 7178 8976 50  0000 L CNN
-F 1 "Conn_01x19_Female" H 7178 8885 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x19_P2.54mm_Vertical" H 7150 8950 50  0001 C CNN
-F 3 "~" H 7150 8950 50  0001 C CNN
-	1    7150 8950
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector:Conn_01x19_Female J4
 U 1 1 602E5E9E
 P 9250 8950
@@ -3122,40 +3111,10 @@ Text GLabel 1800 8150 0    50   Input ~ 0
 KEY_D20
 Wire Wire Line
 	1950 8150 1800 8150
-Text GLabel 1800 8350 0    50   Input ~ 0
-KEY_D100
-Wire Wire Line
-	1800 8350 1950 8350
-Text GLabel 1800 8650 0    50   Input ~ 0
-KEY_D4
-Wire Wire Line
-	1800 8650 1950 8650
-Text GLabel 1800 8750 0    50   Input ~ 0
-KEY_D6
-Wire Wire Line
-	1800 8750 1950 8750
-Text GLabel 1800 8850 0    50   Input ~ 0
-KEY_D8
-Wire Wire Line
-	1800 8850 1950 8850
 Wire Wire Line
 	1250 8950 1950 8950
-Text GLabel 1800 9050 0    50   Input ~ 0
-KEY_F1
 Wire Wire Line
 	1800 9050 1950 9050
-Text GLabel 1800 9150 0    50   Input ~ 0
-KEY_7
-Wire Wire Line
-	1800 9150 1950 9150
-Text GLabel 1800 9250 0    50   Input ~ 0
-KEY_8
-Wire Wire Line
-	1800 9250 1950 9250
-Text GLabel 1800 9350 0    50   Input ~ 0
-KEY_F2
-Wire Wire Line
-	1800 9350 1950 9350
 Text GLabel 1800 9750 0    50   Input ~ 0
 KEY_F3
 Wire Wire Line
@@ -3176,79 +3135,44 @@ Text GLabel 3850 9850 0    50   Input ~ 0
 KEY_0
 Wire Wire Line
 	3850 9850 4000 9850
-Wire Wire Line
-	6800 9650 6950 9650
-Text GLabel 6800 9650 0    50   Input ~ 0
-KEY_ENTER
-Text GLabel 6800 9750 0    50   Input ~ 0
-KEY_CLRALL
-Wire Wire Line
-	6800 9750 6950 9750
-Text GLabel 6800 9850 0    50   Input ~ 0
-KEY_CLRLN
-Wire Wire Line
-	6800 9850 6950 9850
-Text GLabel 8900 8050 0    50   Input ~ 0
+Text GLabel 8900 8650 0    50   Input ~ 0
 KEY_BKSPC
 Wire Wire Line
 	8900 8050 9050 8050
-Text GLabel 8900 8150 0    50   Input ~ 0
+Text GLabel 8900 8750 0    50   Input ~ 0
 KEY_D
 Wire Wire Line
 	8900 8150 9050 8150
-Text GLabel 8900 8250 0    50   Input ~ 0
+Text GLabel 6800 8850 0    50   Input ~ 0
 KEY_DIV
 Wire Wire Line
 	8900 8250 9050 8250
-Text GLabel 8900 8550 0    50   Input ~ 0
+Text GLabel 6800 8950 0    50   Input ~ 0
 KEY_D10
 Wire Wire Line
 	8900 8550 9050 8550
-Text GLabel 8900 8650 0    50   Input ~ 0
+Text GLabel 6800 9050 0    50   Input ~ 0
 KEY_TIMES
 Wire Wire Line
 	8900 8650 9050 8650
-Text GLabel 8900 8750 0    50   Input ~ 0
+Text GLabel 6800 9150 0    50   Input ~ 0
 KEY_9
 Wire Wire Line
 	8900 8750 9050 8750
-Text GLabel 8900 9050 0    50   Input ~ 0
-KEY_MINUS
 Wire Wire Line
 	8900 9050 9050 9050
 Wire Wire Line
 	8350 8950 9050 8950
-Text GLabel 8900 9150 0    50   Input ~ 0
-KEY_6
 Wire Wire Line
 	8900 9150 9050 9150
-Text GLabel 8900 9250 0    50   Input ~ 0
-KEY_5
 Wire Wire Line
 	8900 9250 9050 9250
-Text GLabel 8900 9350 0    50   Input ~ 0
-KEY_PLUS
 Wire Wire Line
 	8900 9350 9050 9350
 Text GLabel 8900 9450 0    50   Input ~ 0
 KEY_3
 Wire Wire Line
 	8900 9450 9050 9450
-Text GLabel 8900 9650 0    50   Input ~ 0
-KEY_2
-Wire Wire Line
-	8900 9650 9050 9650
-$Comp
-L Connector:Conn_01x10_Male J5
-U 1 1 601D52B4
-P 11550 8450
-F 0 "J5" H 11658 9031 50  0000 C CNN
-F 1 "Conn_01x10_Male" H 11658 8940 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x10_P2.54mm_Horizontal" H 11550 8450 50  0001 C CNN
-F 3 "~" H 11550 8450 50  0001 C CNN
-	1    11550 8450
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:VCC #PWR0101
 U 1 1 601DFD30
@@ -3281,9 +3205,9 @@ Wire Wire Line
 	11750 8350 11850 8350
 Wire Wire Line
 	11750 8450 11850 8450
-Text GLabel 11850 8250 2    50   Output ~ 0
-MISO
 Text GLabel 11850 8350 2    50   Output ~ 0
+MISO
+Text GLabel 11850 8250 2    50   Output ~ 0
 MOSI
 Text GLabel 11850 8450 2    50   Output ~ 0
 SCK
@@ -3295,13 +3219,13 @@ Wire Wire Line
 	11750 8750 11850 8750
 Wire Wire Line
 	11750 8850 11850 8850
-Text GLabel 11850 8550 2    50   Output ~ 0
-EPD_CS
-Text GLabel 11850 8650 2    50   Output ~ 0
-EPD_DC
-Text GLabel 11850 8750 2    50   Output ~ 0
-EPD_RST
 Text GLabel 11850 8850 2    50   Output ~ 0
+EPD_CS
+Text GLabel 11850 8750 2    50   Output ~ 0
+EPD_DC
+Text GLabel 11850 8550 2    50   Output ~ 0
+EPD_RST
+Text GLabel 11850 8650 2    50   Output ~ 0
 EPD_BUSY
 Wire Wire Line
 	6950 8550 6850 8550
@@ -3315,36 +3239,12 @@ Text GLabel 6850 8650 0    50   Input ~ 0
 MISO
 Text GLabel 6850 8750 0    50   Input ~ 0
 MOSI
-Wire Wire Line
-	6950 8850 6850 8850
-Text GLabel 6850 8850 0    50   Input ~ 0
-EPD_CS
-Wire Wire Line
-	6950 8950 6850 8950
-Wire Wire Line
-	6950 9050 6850 9050
-Wire Wire Line
-	6950 9150 6850 9150
-Text GLabel 6850 8950 0    50   Input ~ 0
+Text GLabel 8900 8150 0    50   Input ~ 0
 EPD_DC
-Text GLabel 6850 9050 0    50   Input ~ 0
+Text GLabel 6800 8150 0    50   Input ~ 0
 EPD_RST
-Text GLabel 6850 9150 0    50   Input ~ 0
+Text GLabel 6800 8050 0    50   Input ~ 0
 EPD_BUSY
-Wire Wire Line
-	6950 9250 6850 9250
-Text GLabel 6850 9250 0    50   Input ~ 0
-GPIO
-Wire Wire Line
-	11750 8950 11850 8950
-Text GLabel 11850 8950 2    50   Output ~ 0
-GPIO
-Text Notes 700  8500 0    50   ~ 0
-D100 Needs to move to PD2
-Text Notes 3300 8200 0    50   ~ 0
-PD2 Located here
-Text Notes 5200 9850 0    50   ~ 0
-CLRs: Move to other place
 Text Notes 2200 8100 0    50   ~ 0
 PC10
 Text Notes 2200 8200 0    50   ~ 0
@@ -3358,9 +3258,9 @@ N/C
 Text Notes 2200 8600 0    50   ~ 0
 N/C\n
 Text Notes 2200 8700 0    50   ~ 0
-PA13
+PA13 (Used by debug)
 Text Notes 2200 8800 0    50   ~ 0
-PA14
+PA14 (Used by debug)
 Text Notes 2200 8900 0    50   ~ 0
 PA15
 Text Notes 2200 9000 0    50   ~ 0
@@ -3456,9 +3356,9 @@ PB3
 Text Notes 7200 9700 0    50   ~ 0
 PA10
 Text Notes 7200 9800 0    50   ~ 0
-PA2
+PA2 (Used by UART)\n
 Text Notes 7200 9900 0    50   ~ 0
-PA3
+PA3 (Used by UART)
 Text Notes 9300 8100 0    50   ~ 0
 PC8
 Text Notes 9300 8200 0    50   ~ 0
@@ -3497,6 +3397,153 @@ Text Notes 9300 9800 0    50   ~ 0
 N/C
 Text Notes 9300 9900 0    50   ~ 0
 N/C
-Text Notes 900  8800 0    50   ~ 0
-Move D4, D6. \nBreaks Debug
+Wire Wire Line
+	4000 9550 3850 9550
+Wire Wire Line
+	4000 9450 3850 9450
+Wire Wire Line
+	4000 9350 3850 9350
+Text GLabel 3850 9550 0    50   Input ~ 0
+KEY_F2
+Text GLabel 3850 9450 0    50   Input ~ 0
+KEY_8
+Text GLabel 3850 9350 0    50   Input ~ 0
+KEY_7
+Wire Wire Line
+	1950 9350 1800 9350
+Wire Wire Line
+	1950 9250 1800 9250
+Wire Wire Line
+	1950 9150 1800 9150
+Text GLabel 1800 9350 0    50   Input ~ 0
+KEY_F1
+Text GLabel 1800 9250 0    50   Input ~ 0
+KEY_D8
+Text GLabel 1800 9150 0    50   Input ~ 0
+KEY_D6
+Text GLabel 1800 9050 0    50   Input ~ 0
+KEY_D4
+$Comp
+L Connector:Conn_01x19_Female J3
+U 1 1 602E5EA4
+P 7150 8950
+F 0 "J3" H 7178 8976 50  0000 L CNN
+F 1 "Conn_01x19_Female" H 7178 8885 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x19_P2.54mm_Vertical" H 7150 8950 50  0001 C CNN
+F 3 "~" H 7150 8950 50  0001 C CNN
+	1    7150 8950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 9650 6800 9650
+Wire Wire Line
+	9050 9650 8900 9650
+Text GLabel 6800 9650 0    50   Input ~ 0
+KEY_CLRLN
+Text GLabel 8900 9650 0    50   Input ~ 0
+KEY_CLRALL
+Wire Wire Line
+	6950 9550 6800 9550
+Text GLabel 6800 9550 0    50   Input ~ 0
+KEY_ENTER
+Wire Wire Line
+	6950 9450 6800 9450
+Text GLabel 6800 9450 0    50   Input ~ 0
+KEY_2
+Wire Wire Line
+	1950 8850 1800 8850
+Text GLabel 1800 8850 0    50   Input ~ 0
+KEY_D100
+Wire Wire Line
+	4000 8150 3850 8150
+Wire Wire Line
+	4000 8050 3850 8050
+Text GLabel 3850 8050 0    50   Input ~ 0
+ENT_ENABLE
+Text GLabel 3850 8150 0    50   Input ~ 0
+ENT
+Wire Wire Line
+	6950 9350 6800 9350
+Wire Wire Line
+	6800 9250 6950 9250
+Text GLabel 6800 9350 0    50   Input ~ 0
+KEY_PLUS
+Text GLabel 8900 9350 0    50   Input ~ 0
+KEY_5
+Text GLabel 6800 9250 0    50   Input ~ 0
+KEY_6
+Text GLabel 8900 9250 0    50   Input ~ 0
+KEY_MINUS
+Wire Wire Line
+	6950 8050 6800 8050
+Text GLabel 8900 8050 0    50   Input ~ 0
+EPD_CS
+Wire Wire Line
+	6800 8850 6950 8850
+Wire Wire Line
+	6800 8950 6950 8950
+Wire Wire Line
+	6800 9050 6950 9050
+Wire Wire Line
+	6800 9150 6950 9150
+Wire Wire Line
+	6800 8150 6950 8150
+Wire Wire Line
+	6800 8250 6950 8250
+$Comp
+L Connector:Conn_01x09_Male J5
+U 1 1 605B87EC
+P 11550 8450
+F 0 "J5" H 11658 9031 50  0000 C CNN
+F 1 "Conn_01x09_Male" H 11658 8940 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x09_P2.54mm_Vertical" H 11550 8450 50  0001 C CNN
+F 3 "~" H 11550 8450 50  0001 C CNN
+	1    11550 8450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x04_Male J6
+U 1 1 605F42CF
+P 11550 9300
+F 0 "J6" H 11658 9581 50  0000 C CNN
+F 1 "Conn_01x04_Male" H 11658 9490 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 11550 9300 50  0001 C CNN
+F 3 "~" H 11550 9300 50  0001 C CNN
+	1    11550 9300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11750 9400 11850 9400
+Wire Wire Line
+	11750 9500 11850 9500
+$Comp
+L power:VCC #PWR06
+U 1 1 606AFBA6
+P 12450 9200
+F 0 "#PWR06" H 12450 9050 50  0001 C CNN
+F 1 "VCC" H 12465 9373 50  0000 C CNN
+F 2 "" H 12450 9200 50  0001 C CNN
+F 3 "" H 12450 9200 50  0001 C CNN
+	1    12450 9200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR098
+U 1 1 606CAD49
+P 12450 9300
+F 0 "#PWR098" H 12450 9050 50  0001 C CNN
+F 1 "GND" H 12455 9127 50  0000 C CNN
+F 2 "" H 12450 9300 50  0001 C CNN
+F 3 "" H 12450 9300 50  0001 C CNN
+	1    12450 9300
+	1    0    0    -1  
+$EndComp
+Text GLabel 11850 9500 2    50   Input ~ 0
+ENT
+Text GLabel 11850 9400 2    50   Input ~ 0
+ENT_ENABLE
+Wire Wire Line
+	11750 9200 12450 9200
+Wire Wire Line
+	11750 9300 12450 9300
 $EndSCHEMATC

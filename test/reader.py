@@ -76,6 +76,13 @@ class Reader:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
 
+    def block_while_reading(self):
+        try:
+            while True:
+                pass
+        except KeyboardInterrupt:
+            pass
+
 if __name__ == '__main__':
     with Reader():
         try:

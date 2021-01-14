@@ -21,10 +21,11 @@ class ExpressionDisplay {
 	vector<LineEntry*> m_stack;
 
 	void add_symbol(Symbol& new_symbol);
-	void new_line();
+
 	void eval_last_expression();
 public:
-	ExpressionDisplay() { this->new_line(); };
+	ExpressionDisplay() {  };
+	void new_line();
 	void key_event(KeyEvent* event);
 	int num_lines() { return this->m_stack.size(); };
 	LineEntry *line(uint16_t idx) { return this->m_stack[idx]; };

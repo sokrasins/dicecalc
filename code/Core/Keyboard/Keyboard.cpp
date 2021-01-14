@@ -111,12 +111,20 @@ KeyType Keyboard::KEY_TYPE[NUM_KEYS] = {
 
 Key::Key(KeyType type, GPIO_TypeDef* port, uint16_t pin) {
 	this->m_pin = Gpio(port, pin);
-	this->m_pin.enable(GPIO_INPUT);
 	this->m_type = type;
 }
 
+void Key::open() {
+	this->m_pin.enable(GPIO_INPUT);
+}
+
 bool Key::pressed() {
-	return this->m_pin.get_state();
+	uint8_t state = this->m_pin.get_state();
+	if (state == 0) {
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 Keyboard::Keyboard() {
@@ -127,6 +135,12 @@ Keyboard::Keyboard() {
 				Keyboard::KEY_PINS[i]
 		);
 		last_key_state[i] = false;
+	}
+}
+
+void Keyboard::open() {
+	for (uint8_t i=0; i<NUM_KEYS; i++) {
+		this->m_keys[i].open();
 	}
 }
 
