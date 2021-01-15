@@ -119,7 +119,7 @@ class Image {
 
 public:
 	Image();
-	Image(uint16_t width, uint16_t height, uint8_t rotate, uint16_t color);
+	Image(uint16_t width, uint16_t height, uint16_t rotate, uint16_t color);
 
 	void set_size(uint16_t width, uint16_t height);
 	void set_rotation(uint16_t rotation);
@@ -143,6 +143,8 @@ public:
 
 	void draw_bitmap(const unsigned char* image_buffer);
 	void draw_bitmap_block(const unsigned char* image_buffer, uint8_t region);
+
+	uint8_t *get_image();
 };
 
 #endif /* DISPLAY_IMAGE_H_ */

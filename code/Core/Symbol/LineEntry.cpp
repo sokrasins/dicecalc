@@ -14,6 +14,12 @@
 
 using namespace std;
 
+LineEntry::LineEntry() :
+m_result(false)
+{
+
+}
+
 void LineEntry::add_symbol(Symbol& val) {
 	m_line.push_back(&val);
 }

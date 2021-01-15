@@ -24,7 +24,7 @@ m_color(WHITE)
 	memset(m_img, 0, IMAGE_SIZE);
 }
 
-Image::Image(uint16_t width, uint16_t height, uint8_t rotate, uint16_t color) {
+Image::Image(uint16_t width, uint16_t height, uint16_t rotate, uint16_t color) {
 	this->set_rotation(rotate);
 	this->set_mirroring(MIRROR_NONE);
 	this->set_color(color);
@@ -506,4 +506,6 @@ void Image::draw_bitmap_block(const unsigned char* image_buffer, uint8_t region)
 	}
 }
 
-
+uint8_t* Image::get_image() {
+	return this->m_img;
+}

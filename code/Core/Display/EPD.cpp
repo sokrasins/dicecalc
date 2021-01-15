@@ -221,20 +221,22 @@ void Epaper::clear() {
 	this->turn_on_display();
 }
 
-void Epaper::display(uint8_t *image) {
+void Epaper::display(Image& img) {
+	uint8_t *image_buf = img.get_image();
 	uint16_t width = (EPD_WIDTH % 8 == 0) ? (EPD_WIDTH / 8 ) : (EPD_WIDTH / 8 + 1);
 	uint16_t height = EPD_HEIGHT;
 
 	this->send_cmd(0x24);
 	for(uint16_t j = 0; j < height; j++) {
 		for(uint16_t i = 0; i < width; i++) {
-			this->send_data(image[i + j * width]);
+			this->send_data(image_buf[i + j * width]);
 		}
 	}
 	this->turn_on_display();
 }
 
-void Epaper::display_base(uint8_t *image) {
+void Epaper::display_base(Image& img) {
+	uint8_t *image_buf = img.get_image();
 	uint16_t width = (EPD_WIDTH % 8 == 0) ? (EPD_WIDTH / 8 ) : (EPD_WIDTH / 8 + 1);
 	uint16_t height = EPD_HEIGHT;
 
@@ -243,7 +245,7 @@ void Epaper::display_base(uint8_t *image) {
 	for(uint16_t j = 0; j < height; j++) {
 		for(uint16_t i = 0; i < width; i++) {
 			addr = i + j * width;
-			this->send_data(image[addr]);
+			this->send_data(image_buf[addr]);
 		}
 	}
 
@@ -251,21 +253,22 @@ void Epaper::display_base(uint8_t *image) {
 	for(uint16_t j = 0; j < height; j++) {
 		for(uint16_t i = 0; i < width; i++) {
 			addr = i + j * width;
-			this->send_data(image[addr]);
+			this->send_data(image_buf[addr]);
 		}
 	}
 
 	this->turn_on_display();
 }
 
-void Epaper::display_part(uint8_t *image) {
+void Epaper::display_part(Image& img) {
+	uint8_t *image_buf = img.get_image();
 	uint16_t width = (EPD_WIDTH % 8 == 0) ? (EPD_WIDTH / 8 ) : (EPD_WIDTH / 8 + 1);
 	uint16_t height = EPD_HEIGHT;
 
 	this->send_cmd(0x24);
 	for(uint16_t j = 0; j < height; j++) {
 		for(uint16_t i = 0; i < width; i++) {
-			this->send_data(image[i + j * width]);
+			this->send_data(image_buf[i + j * width]);
 		}
 	}
 	this->turn_on_display_part();

@@ -128,6 +128,7 @@ void ExpressionDisplay::eval_last_expression() {
 		assert(success);
 		this->new_line();
 		expr->write_to_entry(*(this->m_stack.back()));
+		this->m_stack.back()->set_result(true);
 		this->new_line();
 	} else {
 		// TODO: Display an error somehow?

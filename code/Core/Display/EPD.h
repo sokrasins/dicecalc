@@ -14,6 +14,7 @@
 #include <stdint.h>
 
 #include <Gpio.h>
+#include "Image.h"
 #include "Spi.h"
 
 enum UpdateMode {
@@ -43,9 +44,9 @@ public:
 	void init(UpdateMode mode);
 	bool open();
 	void clear();
-	void display(uint8_t *image);
-	void display_part(uint8_t *image);
-	void display_base(uint8_t *image);
+	void display(Image& img);
+	void display_part(Image& img);
+	void display_base(Image& img);
 	void sleep();
 };
 

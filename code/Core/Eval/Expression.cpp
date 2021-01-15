@@ -68,7 +68,7 @@ bool Expression::eval() {
 
 	size_t vec_size = this->m_expr.size();
 
-	while (vec_size > 1) {
+	while ((vec_size > 1)) {
 		// Find next operation to evaluate
 		int op_idx = find_highest_order_op();
 		if (op_idx < 0) { return false; }
@@ -92,6 +92,17 @@ bool Expression::eval() {
 		this->m_expr.insert(this->m_expr.begin()+(op_idx-1), result_literal);
 
 		vec_size = this->m_expr.size();
+	}
+
+	// If the last token is a roll, then we need to evaluate
+	// it, and push a number back to the stack
+	Token *last_token = this->m_expr.back();
+	if (last_token->get_type() == TOKEN_ROLL) {
+		Roll *last_roll = (Roll *)last_token;
+		this->m_expr.clear();
+		Number *final_result = new Number(last_roll->value());
+		delete last_token;
+		this->m_expr.push_back(final_result);
 	}
 
 	return true;
