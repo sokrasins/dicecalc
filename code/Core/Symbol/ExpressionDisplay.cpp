@@ -96,15 +96,30 @@ void ExpressionDisplay::key_event(KeyEvent* event) {
 		this->add_symbol(Symbols::num(0));
 		this->add_symbol(Symbols::num(0));
 		break;
-	case KEY_ENTER:
-		this->eval_last_expression();
+	case KEY_ENTER: {
+		LineEntry *eval_line = this->m_stack.back();
+		if (eval_line->size() > 0) {
+			this->new_line();
+			this->eval_expression(eval_line);
+		} else {
+			for (int i = this->m_stack.size(); i>0; i--) {
+				eval_line = this->m_stack[(i-1)];
+				if (eval_line->size() > 0 && !eval_line->is_result()) {
+					break;
+				}
+			}
+			this->eval_expression(eval_line);
+		}
 		break;
+	}
+
 	case KEY_BACKSPACE:
 		this->remove_last_symbol();
 		break;
 	case KEY_CLEARLINE:
 		delete this->m_stack.back();
 		this->m_stack.pop_back();
+		this->new_line();
 		break;
 	case KEY_CLEARALL:
 		for (uint16_t idx=0; idx<this->m_stack.size(); idx++) {
@@ -120,14 +135,14 @@ void ExpressionDisplay::key_event(KeyEvent* event) {
 	}
 }
 
-void ExpressionDisplay::eval_last_expression() {
+void ExpressionDisplay::eval_expression(LineEntry *line) {
 	Expression *expr = new Expression();
-	expr->convert_from_entry(*(this->m_stack.back()));
+	expr->convert_from_entry(*line);
 
 	if (expr->can_eval()) {
 		bool success = expr->eval();
 		assert(success);
-		this->new_line();
+		//this->new_line();
 		expr->write_to_entry(*(this->m_stack.back()));
 		this->m_stack.back()->set_result(true);
 		this->new_line();

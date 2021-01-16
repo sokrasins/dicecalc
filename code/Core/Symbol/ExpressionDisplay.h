@@ -22,7 +22,7 @@ class ExpressionDisplay {
 
 	void add_symbol(Symbol& new_symbol);
 	void remove_last_symbol();
-	void eval_last_expression();
+	void eval_expression(LineEntry *line);
 public:
 	ExpressionDisplay() {  };
 	void new_line();
