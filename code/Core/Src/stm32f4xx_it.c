@@ -194,7 +194,49 @@ void SysTick_Handler(void)
 
 void TIM7_IRQHandler(void)
 {
-     entropy_cb();
+	entropy_cb();
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	gpio_cb(GPIO_Pin);
+}
+
+void EXTI0_IRQHandler(void) {
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
+}
+
+void EXTI1_IRQHandler(void) {
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
+}
+
+void EXTI2_IRQHandler(void) {
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
+}
+
+void EXTI3_IRQHandler(void) {
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
+}
+
+void EXTI4_IRQHandler(void) {
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_4);
+}
+
+void EXTI9_5_IRQHandler(void) {
+	for (uint8_t i=5; i<10; i++) {
+		if (EXTI->PR & (0x1 << i)) {
+			HAL_GPIO_EXTI_IRQHandler(0x1 << i);
+			break;
+		}
+	}
+}
+
+void EXTI15_10_IRQHandler(void) {
+	for (uint8_t i=10; i<16; i++) {
+		if (EXTI->PR & (0x1 << i)) {
+			HAL_GPIO_EXTI_IRQHandler(0x1 << i);
+			break;
+		}
+	}
 }
 
 /******************************************************************************/

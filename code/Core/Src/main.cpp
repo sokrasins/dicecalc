@@ -24,6 +24,10 @@ void entropy_cb(void) {
 	ent.interrupt_cb();
 }
 
+void gpio_cb(uint16_t pin) {
+	Gpio::pin_pressed(pin);
+}
+
 // MAIN
 extern "C" int main(void)
 {
@@ -44,7 +48,6 @@ extern "C" int main(void)
 
   gui = Gui();
   gui.open();
-  gui.update(expression_list);
 
   KeyEvent key_event;
 
@@ -52,6 +55,7 @@ extern "C" int main(void)
 	  // Drain current list of keyevents
   }
 
+  gui.update(expression_list);
   while (1)
   {
     if (kbd.check_for_changes(&key_event)) {
@@ -59,7 +63,6 @@ extern "C" int main(void)
     	gui.update(expression_list);
     }
   }
-
 }
 
 // Handle application errors

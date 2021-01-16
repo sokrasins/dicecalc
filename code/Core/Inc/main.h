@@ -37,6 +37,8 @@ extern "C" {
 
 void entropy_cb(void);
 
+void gpio_cb(uint16_t pin);
+
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 

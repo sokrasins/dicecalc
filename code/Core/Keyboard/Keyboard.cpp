@@ -109,22 +109,24 @@ KeyType Keyboard::KEY_TYPE[NUM_KEYS] = {
 		KEY_BACKSPACE,
 };
 
-Key::Key(KeyType type, GPIO_TypeDef* port, uint16_t pin) {
+Key::Key(KeyType type, GPIO_TypeDef* port, uint16_t pin) :
+m_type(type),
+m_pressed(false)
+{
 	this->m_pin = Gpio(port, pin);
-	this->m_type = type;
 }
 
 void Key::open() {
-	this->m_pin.enable(GPIO_INPUT);
+	this->m_pin.connect_cb(Key::static_cb, (void *)this);
+	this->m_pin.enable(GPIO_IT);
 }
 
-bool Key::pressed() {
-	uint8_t state = this->m_pin.get_state();
-	if (state == 0) {
-		return 1;
-	} else {
-		return 0;
-	}
+void Key::static_cb(void *p) {
+	((Key *)p)->on_press_cb();
+}
+
+void Key::on_press_cb() {
+	this->m_pressed = true;
 }
 
 Keyboard::Keyboard() {
@@ -145,26 +147,14 @@ void Keyboard::open() {
 }
 
 bool Keyboard::check_for_changes(KeyEvent* event) {
-	bool cur_state = false;
-	bool last_state = false;
-
 	for (uint8_t i=0; i<NUM_KEYS; i++) {
-		cur_state = this->m_keys[i].pressed();
-		last_state = this->last_key_state[i];
-
-		if (cur_state != last_state) {
+		if (this->m_keys[i].is_pressed()) {
 			event->key = this->m_keys[i].get_type();
-			if (cur_state) {
-				event->state = KEYSTATE_DOWN;
-			} else {
-				event->state = KEYSTATE_UP;
-			}
-			this->last_key_state[i] = cur_state;
+			event->state = KEYSTATE_DOWN;
+			this->m_keys[i].clear();
 			return true;
 		}
 	}
-
 	return false;
 }
-
 

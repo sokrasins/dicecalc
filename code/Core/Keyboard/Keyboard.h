@@ -16,12 +16,19 @@
 class Key {
 	Gpio m_pin;
 	KeyType m_type;
+	bool m_pressed;
+
 public:
-	Key() {};
+	Key(): m_pressed(false) {};
 	Key(KeyType type, GPIO_TypeDef* port, uint16_t pin);
+
+	static void static_cb(void *p);
+	void on_press_cb();
+
 	void open();
 	KeyType get_type() { return this->m_type; };
-	bool pressed();
+	bool is_pressed() { return this->m_pressed; };
+	void clear() { this->m_pressed = false; }
 };
 
 class Keyboard {
