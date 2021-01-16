@@ -119,6 +119,8 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef *hspi) {
 void HAL_TIM_Base_MspInit(TIM_HandleTypeDef *htim) {
 	if(htim->Instance == TIM7) {
 		__HAL_RCC_TIM7_CLK_ENABLE();
+	} else if (htim->Instance == TIM4) {
+		__HAL_RCC_TIM4_CLK_ENABLE();
 	}
 }
 

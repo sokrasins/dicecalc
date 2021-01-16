@@ -37,6 +37,8 @@ extern "C" {
 
 void entropy_cb(void);
 
+void keyboard_cb(void);
+
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 

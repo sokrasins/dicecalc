@@ -68,11 +68,11 @@ bool Epaper::open() {
 
 void Epaper::reset() {
 	this->rst_pin.set_state(1);
-    Delay_ms(200);
+    Delay_ms(50);
     this->rst_pin.set_state(0);
     Delay_ms(10);
     this->rst_pin.set_state(1);
-    Delay_ms(200);
+    Delay_ms(50);
 }
 
 void Epaper::send_cmd(uint8_t reg) {
@@ -91,7 +91,7 @@ void Epaper::send_data(uint8_t data) {
 
 void Epaper::wait_until_idle() {
 	while(this->busy_pin.get_state() == 1) {
-		Delay_ms(100);
+		Delay_ms(5);
 	}
 }
 

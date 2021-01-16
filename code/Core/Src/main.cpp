@@ -24,6 +24,11 @@ void entropy_cb(void) {
 	ent.interrupt_cb();
 }
 
+void keyboard_cb(void) {
+	//volatile uint32_t time = HAL_GetTick();
+	kbd.check_for_changes();
+}
+
 // MAIN
 extern "C" int main(void)
 {
@@ -46,18 +51,23 @@ extern "C" int main(void)
   gui.open();
   gui.update(expression_list);
 
-  KeyEvent key_event;
-
-  while(kbd.check_for_changes(&key_event)) {
+  KeyEvent evt;
+  while(kbd.get_event(&evt)) {
 	  // Drain current list of keyevents
   }
 
   while (1)
   {
-    if (kbd.check_for_changes(&key_event)) {
-    	expression_list.key_event(&key_event);
-    	gui.update(expression_list);
-    }
+	  bool update = false;
+
+	  while(kbd.get_event(&evt)) {
+		  update = true;
+		  expression_list.key_event(&evt);
+	  }
+
+	  if (update) {
+		  gui.update(expression_list);
+	  }
   }
 
 }

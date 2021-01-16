@@ -136,35 +136,60 @@ Keyboard::Keyboard() {
 		);
 		last_key_state[i] = false;
 	}
+	this->m_tim = {0};
 }
 
 void Keyboard::open() {
 	for (uint8_t i=0; i<NUM_KEYS; i++) {
 		this->m_keys[i].open();
 	}
+
+	this->m_tim.Instance = TIM4;
+	this->m_tim.Init.Period = 10000;
+	this->m_tim.Init.Prescaler = 100;
+	this->m_tim.Init.ClockDivision = 0; //TIM_CLOCKDIVISION_DIV4;
+	this->m_tim.Init.CounterMode = TIM_COUNTERMODE_UP;
+
+	HAL_TIM_Base_Init(&this->m_tim);
+	HAL_TIM_Base_Start_IT(&this->m_tim);
+	HAL_NVIC_EnableIRQ(TIM4_IRQn);
+	HAL_TIM_Base_Start(&this->m_tim);
 }
 
-bool Keyboard::check_for_changes(KeyEvent* event) {
+void Keyboard::check_for_changes() {
+	KeyEvent event;
 	bool cur_state = false;
 	bool last_state = false;
+
+	HAL_TIM_IRQHandler(&this->m_tim);
 
 	for (uint8_t i=0; i<NUM_KEYS; i++) {
 		cur_state = this->m_keys[i].pressed();
 		last_state = this->last_key_state[i];
 
 		if (cur_state != last_state) {
-			event->key = this->m_keys[i].get_type();
+			event.key = this->m_keys[i].get_type();
 			if (cur_state) {
-				event->state = KEYSTATE_DOWN;
+				event.state = KEYSTATE_DOWN;
 			} else {
-				event->state = KEYSTATE_UP;
+				event.state = KEYSTATE_UP;
 			}
+			this->m_events.push_back(event);
 			this->last_key_state[i] = cur_state;
-			return true;
 		}
 	}
-
-	return false;
 }
 
+bool Keyboard::get_event(KeyEvent* event) {
+	if (this->m_events.size() > 0) {
+		KeyEvent evt = this->m_events.front();
+		event->key = evt.key;
+		event->state = evt.state;
+		this->m_events.erase(
+				this->m_events.begin(),
+				this->m_events.begin()+1);
+		return true;
+	}
+	return false;
+}
 

@@ -192,9 +192,13 @@ void SysTick_Handler(void)
   /* USER CODE END SysTick_IRQn 1 */
 }
 
-void TIM7_IRQHandler(void)
-{
-     entropy_cb();
+void TIM7_IRQHandler(void) {
+	entropy_cb();
+}
+
+void TIM4_IRQHandler(void) {
+	HAL_TIM_IRQHandler(TIM4);
+	keyboard_cb();
 }
 
 /******************************************************************************/
