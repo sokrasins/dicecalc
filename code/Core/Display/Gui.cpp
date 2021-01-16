@@ -37,7 +37,7 @@ void Gui::update(ExpressionDisplay& expr) {
 	this->draw_status_bar();
 
 	int cur_lines = expr.num_lines();
-	if (cur_lines > this->m_num_expr) {
+	if (cur_lines != this->m_num_expr) {
 		mode = EPD_UPDATE_FULL;
 	}
 

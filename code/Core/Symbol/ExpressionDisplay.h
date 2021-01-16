@@ -21,7 +21,7 @@ class ExpressionDisplay {
 	vector<LineEntry*> m_stack;
 
 	void add_symbol(Symbol& new_symbol);
-
+	void remove_last_symbol();
 	void eval_last_expression();
 public:
 	ExpressionDisplay() {  };

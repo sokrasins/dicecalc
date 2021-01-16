@@ -27,6 +27,8 @@ class LineEntry {
 		bool get(int idx, Symbol* sym);
 		bool is_result() { return this->m_result; };
 		void set_result(bool result) { this->m_result = result; };
+		void remove_last_symbol();
+
 };
 
 

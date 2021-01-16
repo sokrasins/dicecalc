@@ -50,3 +50,10 @@ bool LineEntry::get(int idx, Symbol* sym) {
 	*sym = *m_line[idx];
 	return true;
 }
+
+void LineEntry::remove_last_symbol() {
+	if (this->size() > 0) {
+		this->m_line.pop_back();
+
+	}
+}

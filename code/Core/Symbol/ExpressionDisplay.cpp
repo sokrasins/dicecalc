@@ -100,7 +100,7 @@ void ExpressionDisplay::key_event(KeyEvent* event) {
 		this->eval_last_expression();
 		break;
 	case KEY_BACKSPACE:
-		// TODO
+		this->remove_last_symbol();
 		break;
 	case KEY_CLEARLINE:
 		delete this->m_stack.back();
@@ -111,6 +111,7 @@ void ExpressionDisplay::key_event(KeyEvent* event) {
 			delete this->m_stack[idx];
 		}
 		this->m_stack.clear();
+		this->new_line();
 		break;
 
 	default:
@@ -139,6 +140,13 @@ void ExpressionDisplay::eval_last_expression() {
 
 void ExpressionDisplay::add_symbol(Symbol& new_symbol) {
 	this->m_stack.back()->add_symbol(new_symbol);
+}
+
+void ExpressionDisplay::remove_last_symbol() {
+	LineEntry *last_line = this->m_stack.back();
+	if (last_line->size() > 0) {
+		last_line->remove_last_symbol();
+	}
 }
 
 void ExpressionDisplay::new_line() {
