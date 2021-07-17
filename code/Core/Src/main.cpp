@@ -12,6 +12,7 @@
 #include "EPD.h"
 #include "Entropy.h"
 #include "Gui.h"
+#include "Prng.h"
 
 ExpressionDisplay expression_list;
 Entropy ent;
@@ -51,6 +52,10 @@ extern "C" int main(void)
   gui.open();
   gui.update(expression_list);
 
+  Prng &rng = Prng::get_instance();
+  uint8_t seed[32] = {0};	// TODO: seed with real entropy
+  rng.set_seed(seed);
+
   KeyEvent evt;
   while(kbd.get_event(&evt)) {
 	  // Drain current list of keyevents
@@ -69,7 +74,6 @@ extern "C" int main(void)
 		  gui.update(expression_list);
 	  }
   }
-
 }
 
 // Handle application errors

@@ -18,7 +18,7 @@ public:
 	Roll(int sides, int rolls) : m_sides(sides), m_rolls(rolls) {};
 	void set_sides(int sides) { m_sides = sides; };
 	void set_rolls(int rolls) { m_rolls = rolls; };
-	int value() override { return m_sides * m_rolls; }; // TODO
+	int value() override;
 	TokenType get_type() override { return TOKEN_ROLL; };
 
 	int get_sides() { return m_sides; };

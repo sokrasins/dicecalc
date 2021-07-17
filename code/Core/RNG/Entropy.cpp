@@ -46,6 +46,7 @@ void Entropy::clear_samps() {
 void Entropy::open() {
 	this->m_source_pin.enable(GPIO_INPUT);
 	this->m_source_enable_pin.enable(GPIO_OUTPUT);
+	//this->m_source_enable_pin.set_state(1); // For debugging
 }
 
 void Entropy::collect() {
