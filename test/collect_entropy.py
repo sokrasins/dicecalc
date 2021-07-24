@@ -1,43 +1,14 @@
 """
 Demonstrates how to stream using a callback to read stream, which is useful
 for streaming in external clock stream mode.
-
-Relevant Documentation:
- 
-LJM Library:
-    LJM Library Installer:
-        https://labjack.com/support/software/installers/ljm
-    LJM Users Guide:
-        https://labjack.com/support/software/api/ljm
-    Opening and Closing:
-        https://labjack.com/support/software/api/ljm/function-reference/opening-and-closing
-    Utility Functions (such as NamesToAddresses):
-        https://labjack.com/support/software/api/ljm/function-reference/utility
-    Stream Functions:
-        https://labjack.com/support/software/api/ljm/function-reference/stream-functions
- 
-T-Series and I/O:
-    Modbus Map:
-        https://labjack.com/support/software/api/modbus/modbus-map
-    Stream Mode: 
-        https://labjack.com/support/datasheets/t-series/communication/stream-mode
-    Analog Inputs:
-        https://labjack.com/support/datasheets/t-series/ain
-    Stream-Out: 
-        https://labjack.com/support/datasheets/t-series/communication/stream-mode/stream-out/stream-out-description
-    Digital I/O:
-        https://labjack.com/support/datasheets/t-series/digital-io
-    Pulse Out:
-        https://labjack.com/support/datasheets/t-series/digital-io/extended-features/pulse-out
-    Stream Mode (externally clocked):
-        https://labjack.com/support/datasheets/t-series/communication/stream-mode#externally-clocked
-
 """
+
 from datetime import datetime
 import sys
 import threading
 import time
 import traceback
+import argparse
 
 from labjack import ljm
 
@@ -49,12 +20,13 @@ class StreamInfo:
         self.scanRate = 0
         self.scansPerRead = 0
         self.streamLengthMS = 0
+        self.numberOfReadsToPerform = 0
         self.done = False
 
         self.numAddresses = 0
         self.aScanList = 0
         self.aScanListNames = 0
-        
+
         self.aDataSize = 0
         self.aData = None
 
@@ -105,8 +77,9 @@ def myStreamReadCallback(arg):
         # reported after auto-recover mode ends.
         curSkip = si.aData.count(-9999.0)
         si.totSkip += curSkip
+        percent_done = float(si.streamRead) / float(si.numberOfReadsToPerform)
 
-        string = "  Total samples: %d" % (len(si.bin_samps))
+        string = "  Percent done: %0.2f Total samples: %d" % (percent_done, len(si.bin_samps))
         string += "\n  Scans Skipped = %0.0f, Scan Backlogs: Device = %i, LJM = %i" % \
                 (curSkip/si.numAddresses, deviceScanBacklog, ljmScanBackLog)
         printWithLock(string)
@@ -140,6 +113,19 @@ si = StreamInfo()
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--samples', '-s', type=int, default=100000000,
+                        help='Total boolean samples to collect (default: 100,000,000)')
+    parser.add_argument('--rate', '-r', type=int, default=20000,
+                        help='Sample rate in Hz (default: 20,000)')
+    args = parser.parse_args()
+
+    if args.rate > 40000 or args.rate < 0:
+        print("ERROR: Invalid sample rate, max is 40 kSa/sec and must be positive. Exiting...")
+        sys.exit()
+
+    sys.exit()
+
     # Open first found T4 LabJack
     handle = ljm.openS("T4", "ANY", "ANY")  # Any device, Any connection, Any identifier
 
@@ -158,10 +144,10 @@ if __name__ == "__main__":
     si.aScanListNames = ["FIO_STATE"]
     si.numAddresses = len(si.aScanListNames)
     si.aScanList = ljm.namesToAddresses(si.numAddresses, si.aScanListNames)[0]
-    si.scanRate = 20000
+    si.scanRate = args.rate
     si.scansPerRead = int(si.scanRate / 2)
 
-    si.numberOfReadsToPerform = int(100000000 / si.scansPerRead)
+    si.numberOfReadsToPerform = int(args.samples / si.scansPerRead)
     si.done = False
     si.aDataSize = si.numAddresses * si.scansPerRead
     si.handle = handle
@@ -178,7 +164,6 @@ if __name__ == "__main__":
         si.scanRate = ljm.eStreamStart(handle, si.scansPerRead, si.numAddresses, si.aScanList, si.scanRate)
         print("\nStream started with a scan rate of %0.0f Hz." % si.scanRate)
 
-        
         # Set the callback function.
         ljm.setStreamCallback(handle, myStreamReadCallback)
 
