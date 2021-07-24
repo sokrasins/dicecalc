@@ -13,4 +13,6 @@ if __name__ == '__main__':
     with open(args.filename, 'rb') as f:
         rand_bytes = bytearray(f.read())
         plt.hist(rand_bytes, bins=range(0, 256))
+        plt.ylabel('Count')
+        plt.xlabel('Byte Value')
         plt.show()

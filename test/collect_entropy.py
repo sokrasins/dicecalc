@@ -34,7 +34,8 @@ class StreamInfo:
         self.totSkip = 0
         self.totScans = 0
 
-        self.bin_samps = []
+        self.bin_residue = []
+        self.byte_samps = []
 
 
 printLock = threading.Lock()
@@ -67,7 +68,8 @@ def myStreamReadCallback(arg):
         ljmScanBackLog = ret[2]
 
         # Extract the data from FIO4
-        si.bin_samps += list(map(lambda x : int(x) >> 4 & 1, si.aData))
+        bin_samps = list(map(lambda x : int(x) >> 4 & 1, si.aData))
+        si.byte_samps += reduce_bin_to_bytes(bin_samps)
 
         scans = len(si.aData) / si.numAddresses
         si.totScans += scans
@@ -80,7 +82,7 @@ def myStreamReadCallback(arg):
         percent_done = float(si.streamRead) / float(si.numberOfReadsToPerform)
 
         string = "  Percent done: %0.2f Total samples: %d" % (percent_done, len(si.bin_samps))
-        string += "\n  Scans Skipped = %0.0f, Scan Backlogs: Device = %i, LJM = %i" % \
+        string += "   Scans Skipped = %0.0f, Scan Backlogs: Device = %i, LJM = %i" % \
                 (curSkip/si.numAddresses, deviceScanBacklog, ljmScanBackLog)
         printWithLock(string)
 
@@ -124,7 +126,10 @@ if __name__ == "__main__":
         print("ERROR: Invalid sample rate, max is 40 kSa/sec and must be positive. Exiting...")
         sys.exit()
 
-    sys.exit()
+    param_log = "Input Params:"
+    param_log += "\n  samples: %d" % (args.samples)
+    param_log += "\n  rate: %d" % (args.rate)
+    print(param_log)
 
     # Open first found T4 LabJack
     handle = ljm.openS("T4", "ANY", "ANY")  # Any device, Any connection, Any identifier
