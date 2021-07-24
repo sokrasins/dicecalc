@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name entropy-rescue)(type Legacy)(uri ${KIPRJMOD}/entropy-rescue.lib)(options "")(descr ""))
+)
