@@ -5,3 +5,5 @@ code/Debug
 code/Release
 
 *.pyc
+
+*.bin
