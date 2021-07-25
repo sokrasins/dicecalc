@@ -5,6 +5,7 @@ for streaming in external clock stream mode.
 
 from datetime import datetime
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 import sys
 import threading
 import time
@@ -69,13 +70,16 @@ def myStreamReadCallback(arg):
         deviceScanBacklog = ret[1]
         ljmScanBackLog = ret[2]
 
+        if len(si.aData) < 8:
+            return
+
         # Collapse the data into bytes
         bin_samps = si.bin_residue + list(map(lambda x : int(x) >> 4 & 1, si.aData))
         si.bin_residue = []
 
         last_full_byte = 8 * int(len(bin_samps) / 8)
         si.bin_residue = bin_samps[last_full_byte:]
-        si.byte_samps += reduce_bin_to_bytes(bin_samps[:last_full_byte])
+        si.byte_samps += reduce_bin_to_byte(bin_samps[:last_full_byte])
 
         scans = len(si.aData) / si.numAddresses
         si.totScans += scans
@@ -85,7 +89,7 @@ def myStreamReadCallback(arg):
         # reported after auto-recover mode ends.
         curSkip = si.aData.count(-9999.0)
         si.totSkip += curSkip
-        percent_done = float(si.streamRead) / float(si.numberOfReadsToPerform)
+        percent_done = 100 * float(si.streamRead) / float(si.numberOfReadsToPerform)
 
         string = "  Percent done: %0.2f Total bytes: %d" % (percent_done, len(si.byte_samps))
         string += "  Scans Skipped = %0.0f, Scan Backlogs: Device = %i, LJM = %i" % \
@@ -182,17 +186,20 @@ if __name__ == "__main__":
         printWithLock("Waiting until eStreamRead has been called %d times."
             % si.numberOfReadsToPerform)
 
-        plot_bytes = 0
-        while (si.streamRead < si.numberOfReadsToPerform):
-            if len(si.byte_samps) > plot_bytes:
-                # Plot the byte samples as we get them
-                plot_bytes = len(si.byte_samps)
-                plt.hist(si.byte_samps, bins=range(0, 256))
-                plt.xlabel('Count')
-                plt.ylabel('Byte Value')
-                plt.pause(.01)
+        fig = plt.figure()
+        hist = plt.hist(si.byte_samps, bins=256)
+        plt.ion()
+        plt.show()
 
-            # Sits here for a long time while streaming
+        while (si.streamRead < si.numberOfReadsToPerform):
+            # While we're collecting data update the histogram
+            plt.cla()
+            plt.hist(si.byte_samps, bins=256)
+            plt.title("%d Byte Samples" % (len(si.byte_samps)))
+            plt.ylabel("Counts")
+            plt.xlabel("Byte Values")
+            plt.pause(.001)
+
             time.sleep(.1)
 
         t1 = datetime.now()
@@ -221,9 +228,11 @@ if __name__ == "__main__":
     # Close handle
     ljm.close(handle)
 
-    # Write the bin data to a file here!
-    byte_data = bytearray(reduce_bin_to_byte(si.bin_samps))
+    filename = time.strftime('%Y%m%d-%H%M%S.bin')
+    filename = ('entropy-%dSaps-' % args.rate) + filename
+    with open(filename, 'wb') as f:
+        f.write(bytearray(si.byte_samps))
 
-    with open('rand_samp.bin', 'wb') as f:
-        f.write(byte_data)
+    plt.ioff()
+    plt.show()
 
