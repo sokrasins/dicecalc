@@ -1,8 +1,0 @@
-Token.h:17:10:Token::~Token()	16	static
-Token.h:17:10:virtual Token::~Token()	16	static
-Literal.h:15:10:Literal::~Literal()	16	static
-Literal.h:15:10:virtual Literal::~Literal()	16	static
-Roll.h:22:12:virtual TokenType Roll::get_type()	16	static
-Roll.cpp:12:5:virtual int Roll::value()	32	static
-Roll.h:13:7:Roll::~Roll()	16	static
-Roll.h:13:7:virtual Roll::~Roll()	16	static

@@ -1,5 +1,0 @@
-Gpio.cpp:10:6:void Gpio::set_pin(GPIO_TypeDef*, uint16_t)	24	static
-Gpio.cpp:15:6:void Gpio::enable(GpioMode)	40	static
-Gpio.cpp:32:6:void Gpio::set_state(int)	16	static
-Gpio.cpp:48:6:void Gpio::toggle()	16	static
-Gpio.cpp:60:9:uint8_t Gpio::get_state()	24	static

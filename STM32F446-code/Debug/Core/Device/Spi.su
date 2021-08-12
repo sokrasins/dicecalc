@@ -1,3 +1,0 @@
-Spi.cpp:15:1:Spi::Spi()	16	static
-Spi.cpp:31:6:bool Spi::open(SPI_TypeDef*)	16	static
-Spi.cpp:43:6:void Spi::write_byte(uint8_t)	16	static
