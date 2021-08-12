@@ -1,8 +1,10 @@
 *.zip
 *bak
 
-STM32F446-code/Debug/
-STM32F446-code/Release/
+STM32F446-code/Debug/*
+STM32F446-code/Release/*
+
+test/results.json
 
 *.pyc
 
