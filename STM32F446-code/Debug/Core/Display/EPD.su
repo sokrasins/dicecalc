@@ -1,0 +1,17 @@
+Gpio.h:26:2:Gpio::Gpio()	16	static
+Gpio.h:27:2:Gpio::Gpio(GPIO_TypeDef*, uint16_t)	24	static
+EPD.cpp:50:1:Epaper::Epaper()	152	static
+EPD.cpp:59:6:bool Epaper::open()	24	static
+EPD.cpp:69:6:void Epaper::reset()	16	static
+EPD.cpp:78:6:void Epaper::send_cmd(uint8_t)	16	static
+EPD.cpp:85:6:void Epaper::send_data(uint8_t)	16	static
+EPD.cpp:92:6:void Epaper::wait_until_idle()	16	static
+EPD.cpp:98:6:void Epaper::turn_on_display()	16	static
+EPD.cpp:105:6:void Epaper::turn_on_display_part()	16	static
+EPD.cpp:112:6:void Epaper::init(UpdateMode)	24	static
+EPD.cpp:211:6:void Epaper::clear()	24	static
+EPD.cpp:225:6:void Epaper::display(Image&)	32	static
+EPD.cpp:240:6:void Epaper::display_base(Image&)	40	static
+EPD.cpp:266:6:void Epaper::display_part(Image&)	32	static
+EPD.cpp:281:6:void Epaper::sleep()	16	static
+EPD.cpp:293:6:void Epaper::set_power(bool)	16	static

@@ -1,0 +1,74 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+ExpressionDisplay.h:27:2:ExpressionDisplay::ExpressionDisplay()	16	static
+main.cpp:24:6:void entropy_cb()	8	static
+main.cpp:28:6:void keyboard_cb()	8	static
+ExpressionDisplay.h:20:7:ExpressionDisplay::~ExpressionDisplay()	16	static
+ExpressionDisplay.h:20:7:ExpressionDisplay& ExpressionDisplay::operator=(ExpressionDisplay&&)	16	static
+Keyboard.h:34:7:Keyboard::~Keyboard()	16	static
+Keyboard.h:34:7:Keyboard& Keyboard::operator=(Keyboard&&)	24	static
+main.cpp:34:16:int main()	5040	static
+main.cpp:79:6:void Error_Handler()	4	static,ignoring_inline_asm
+stl_vector.h:259:7:std::vector<_Tp, _Alloc>::vector() [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	16	static
+stl_vector.h:433:7:std::vector<_Tp, _Alloc>::~vector() [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	24	static
+move.h:98:5:constexpr typename std::remove_reference< <template-parameter-1-1> >::type&& std::move(_Tp&&) [with _Tp = std::vector<LineEntry*>&]	16	static
+stl_vector.h:461:7:std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	32	static
+stl_vector.h:433:7:std::vector<_Tp, _Alloc>::~vector() [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	24	static
+move.h:98:5:constexpr typename std::remove_reference< <template-parameter-1-1> >::type&& std::move(_Tp&&) [with _Tp = std::vector<KeyEvent>&]	16	static
+stl_vector.h:461:7:std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	32	static
+stl_vector.h:81:14:std::_Vector_base<LineEntry*, std::allocator<LineEntry*> >::_Vector_impl::~_Vector_impl()	16	static
+stl_vector.h:126:7:std::_Vector_base<_Tp, _Alloc>::_Vector_base() [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	16	static
+stl_vector.h:161:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	16	static
+stl_vector.h:115:7:std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type& std::_Vector_base<_Tp, _Alloc>::_M_get_Tp_allocator() [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	16	static
+stl_construct.h:203:5:void std::_Destroy(_ForwardIterator, _ForwardIterator, std::allocator<_T2>&) [with _ForwardIterator = LineEntry**; _Tp = LineEntry*]	24	static
+stl_vector.h:1529:7:void std::vector<_Tp, _Alloc>::_M_move_assign(std::vector<_Tp, _Alloc>&&, std::true_type) [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	48	static
+stl_vector.h:81:14:std::_Vector_base<KeyEvent, std::allocator<KeyEvent> >::_Vector_impl::~_Vector_impl()	16	static
+stl_vector.h:161:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	16	static
+stl_vector.h:115:7:std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type& std::_Vector_base<_Tp, _Alloc>::_M_get_Tp_allocator() [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	16	static
+stl_construct.h:203:5:void std::_Destroy(_ForwardIterator, _ForwardIterator, std::allocator<_T2>&) [with _ForwardIterator = KeyEvent*; _Tp = KeyEvent]	24	static
+stl_vector.h:1529:7:void std::vector<_Tp, _Alloc>::_M_move_assign(std::vector<_Tp, _Alloc>&&, std::true_type) [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	48	static
+stl_vector.h:88:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl() [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	16	static
+allocator.h:139:7:std::allocator< <template-parameter-1-1> >::~allocator() [with _Tp = LineEntry*]	16	static
+stl_vector.h:176:7:void std::_Vector_base<_Tp, _Alloc>::_M_deallocate(std::_Vector_base<_Tp, _Alloc>::pointer, std::size_t) [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	24	static
+stl_construct.h:127:5:void std::_Destroy(_ForwardIterator, _ForwardIterator) [with _ForwardIterator = LineEntry**]	16	static
+stl_vector.h:123:7:std::_Vector_base<_Tp, _Alloc>::allocator_type std::_Vector_base<_Tp, _Alloc>::get_allocator() const [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	16	static
+stl_vector.h:270:7:std::vector<_Tp, _Alloc>::vector(const allocator_type&) [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	16	static
+stl_vector.h:103:7:void std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_M_swap_data(std::_Vector_base<_Tp, _Alloc>::_Vector_impl&) [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	16	static
+alloc_traits.h:543:17:void std::__alloc_on_move(_Alloc&, _Alloc&) [with _Alloc = std::allocator<LineEntry*>]	24	static
+allocator.h:139:7:std::allocator< <template-parameter-1-1> >::~allocator() [with _Tp = KeyEvent]	16	static
+stl_vector.h:176:7:void std::_Vector_base<_Tp, _Alloc>::_M_deallocate(std::_Vector_base<_Tp, _Alloc>::pointer, std::size_t) [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	24	static
+stl_construct.h:127:5:void std::_Destroy(_ForwardIterator, _ForwardIterator) [with _ForwardIterator = KeyEvent*]	16	static
+stl_vector.h:123:7:std::_Vector_base<_Tp, _Alloc>::allocator_type std::_Vector_base<_Tp, _Alloc>::get_allocator() const [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	16	static
+stl_vector.h:270:7:std::vector<_Tp, _Alloc>::vector(const allocator_type&) [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	16	static
+stl_vector.h:103:7:void std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_M_swap_data(std::_Vector_base<_Tp, _Alloc>::_Vector_impl&) [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	16	static
+alloc_traits.h:543:17:void std::__alloc_on_move(_Alloc&, _Alloc&) [with _Alloc = std::allocator<KeyEvent>]	24	static
+allocator.h:131:7:std::allocator< <template-parameter-1-1> >::allocator() [with _Tp = LineEntry*]	16	static
+new_allocator.h:86:7:__gnu_cxx::new_allocator<_Tp>::~new_allocator() [with _Tp = LineEntry*]	16	static
+alloc_traits.h:461:7:static void std::allocator_traits<std::allocator<_Tp1> >::deallocate(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, std::allocator_traits<std::allocator<_Tp1> >::pointer, std::allocator_traits<std::allocator<_Tp1> >::size_type) [with _Tp = LineEntry*]	24	static
+stl_construct.h:117:9:static void std::_Destroy_aux<true>::__destroy(_ForwardIterator, _ForwardIterator) [with _ForwardIterator = LineEntry**]	16	static
+stl_vector.h:119:7:const _Tp_alloc_type& std::_Vector_base<_Tp, _Alloc>::_M_get_Tp_allocator() const [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	16	static
+allocator.h:133:7:std::allocator< <template-parameter-1-1> >::allocator(const std::allocator< <template-parameter-1-1> >&) [with _Tp = LineEntry*]	16	static
+stl_vector.h:129:7:std::_Vector_base<_Tp, _Alloc>::_Vector_base(const allocator_type&) [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	16	static
+move.h:98:5:constexpr typename std::remove_reference< <template-parameter-1-1> >::type&& std::move(_Tp&&) [with _Tp = LineEntry**&]	16	static
+move.h:187:5:typename std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<_Tp> >, std::is_move_constructible<_Tp>, std::is_move_assignable<_Tp> >::value>::type std::swap(_Tp&, _Tp&) [with _Tp = LineEntry**]	24	static
+move.h:98:5:constexpr typename std::remove_reference< <template-parameter-1-1> >::type&& std::move(_Tp&&) [with _Tp = std::allocator<LineEntry*>&]	16	static
+alloc_traits.h:535:17:void std::__do_alloc_on_move(_Alloc&, _Alloc&, std::true_type) [with _Alloc = std::allocator<LineEntry*>]	24	static
+new_allocator.h:86:7:__gnu_cxx::new_allocator<_Tp>::~new_allocator() [with _Tp = KeyEvent]	16	static
+alloc_traits.h:461:7:static void std::allocator_traits<std::allocator<_Tp1> >::deallocate(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, std::allocator_traits<std::allocator<_Tp1> >::pointer, std::allocator_traits<std::allocator<_Tp1> >::size_type) [with _Tp = KeyEvent]	24	static
+stl_construct.h:117:9:static void std::_Destroy_aux<true>::__destroy(_ForwardIterator, _ForwardIterator) [with _ForwardIterator = KeyEvent*]	16	static
+stl_vector.h:119:7:const _Tp_alloc_type& std::_Vector_base<_Tp, _Alloc>::_M_get_Tp_allocator() const [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	16	static
+allocator.h:133:7:std::allocator< <template-parameter-1-1> >::allocator(const std::allocator< <template-parameter-1-1> >&) [with _Tp = KeyEvent]	16	static
+stl_vector.h:129:7:std::_Vector_base<_Tp, _Alloc>::_Vector_base(const allocator_type&) [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	16	static
+move.h:98:5:constexpr typename std::remove_reference< <template-parameter-1-1> >::type&& std::move(_Tp&&) [with _Tp = KeyEvent*&]	16	static
+move.h:187:5:typename std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<_Tp> >, std::is_move_constructible<_Tp>, std::is_move_assignable<_Tp> >::value>::type std::swap(_Tp&, _Tp&) [with _Tp = KeyEvent*]	24	static
+move.h:98:5:constexpr typename std::remove_reference< <template-parameter-1-1> >::type&& std::move(_Tp&&) [with _Tp = std::allocator<KeyEvent>&]	16	static
+alloc_traits.h:535:17:void std::__do_alloc_on_move(_Alloc&, _Alloc&, std::true_type) [with _Alloc = std::allocator<KeyEvent>]	24	static
+new_allocator.h:79:7:__gnu_cxx::new_allocator<_Tp>::new_allocator() [with _Tp = LineEntry*]	16	static
+new_allocator.h:116:7:void __gnu_cxx::new_allocator<_Tp>::deallocate(__gnu_cxx::new_allocator<_Tp>::pointer, __gnu_cxx::new_allocator<_Tp>::size_type) [with _Tp = LineEntry*]	24	static
+new_allocator.h:81:7:__gnu_cxx::new_allocator<_Tp>::new_allocator(const __gnu_cxx::new_allocator<_Tp>&) [with _Tp = LineEntry*]	16	static
+stl_vector.h:92:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl(const _Tp_alloc_type&) [with _Tp = LineEntry*; _Alloc = std::allocator<LineEntry*>]	16	static
+new_allocator.h:116:7:void __gnu_cxx::new_allocator<_Tp>::deallocate(__gnu_cxx::new_allocator<_Tp>::pointer, __gnu_cxx::new_allocator<_Tp>::size_type) [with _Tp = KeyEvent]	24	static
+new_allocator.h:81:7:__gnu_cxx::new_allocator<_Tp>::new_allocator(const __gnu_cxx::new_allocator<_Tp>&) [with _Tp = KeyEvent]	16	static
+stl_vector.h:92:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl(const _Tp_alloc_type&) [with _Tp = KeyEvent; _Alloc = std::allocator<KeyEvent>]	16	static
+main.cpp:87:1:void __static_initialization_and_destruction_0(int, int)	16	static
+main.cpp:87:1:cpp)	8	static
+main.cpp:87:1:cpp)	8	static

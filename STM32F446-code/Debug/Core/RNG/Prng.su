@@ -1,0 +1,6 @@
+Prng.cpp:13:1:Prng::Prng()	16	static
+Prng.cpp:18:7:static Prng& Prng::get_instance()	8	static
+Prng.cpp:23:6:void Prng::set_seed(uint8_t*)	16	static
+Prng.cpp:28:6:void Prng::next_rand(uint8_t*)	16	static
+Prng.cpp:34:6:void Prng::increment_counter()	24	static
+Prng.cpp:44:5:int Prng::rand_int(int, int)	72	static
