@@ -1,0 +1,10 @@
+Output: Export STEP
+Type  : ExportSTEP
+From  : Variant [Default] of PCB Document [04-07349-R5_L10.PcbDoc]
+   Generated File[04-07349-R5_L10(Default).step]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 2:33:31 PM On 7/6/2018

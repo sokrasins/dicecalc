@@ -78,7 +78,6 @@ void __attribute__((optimize("-O1"),section(".text.Dummy_Handler"),long_call, no
 /* Device vectors list dummy definition*/
 extern void SVCall_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PendSV_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void SysTick_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SYSTEM_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void WDT_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void RTC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -86,7 +85,6 @@ extern void EIC_EXTINT_0_Handler       ( void ) __attribute__((weak, alias("Dumm
 extern void EIC_EXTINT_1_Handler       ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EIC_EXTINT_2_Handler       ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EIC_EXTINT_3_Handler       ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void EIC_OTHER_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void FREQM_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void NVMCTRL_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PORT_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -150,7 +148,7 @@ const H3DeviceVectors exception_table=
     .pfnEIC_EXTINT_1_Handler       = EIC_EXTINT_1_Handler,
     .pfnEIC_EXTINT_2_Handler       = EIC_EXTINT_2_Handler,
     .pfnEIC_EXTINT_3_Handler       = EIC_EXTINT_3_Handler,
-    .pfnEIC_OTHER_Handler          = EIC_OTHER_Handler,
+    .pfnEIC_OTHER_Handler          = EIC_OTHER_InterruptHandler,
     .pfnFREQM_Handler              = FREQM_Handler,
     .pfnNVMCTRL_Handler            = NVMCTRL_Handler,
     .pfnPORT_Handler               = PORT_Handler,

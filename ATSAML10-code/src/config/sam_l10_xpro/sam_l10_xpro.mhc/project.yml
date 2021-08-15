@@ -6,20 +6,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 9D5EE038B893127B787BC03DFA6B467F
-- generatedChecksum: B3A2D5D6E7C6BE3497EFBA7DA7DA48F1
+- generatedChecksum: 69E8616E4B98374BF2FA57470BDA9365
   logicalPath: config\sam_l10_xpro
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B3A2D5D6E7C6BE3497EFBA7DA7DA48F1
-- generatedChecksum: F2ED4E0A59B984D043774F290D02BE2D
+  userChecksum: 69E8616E4B98374BF2FA57470BDA9365
+- generatedChecksum: C5633C0B86ADCD53B93259A3FCF73350
   logicalPath: config\sam_l10_xpro
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: F2ED4E0A59B984D043774F290D02BE2D
+  userChecksum: C5633C0B86ADCD53B93259A3FCF73350
 - generatedChecksum: 6513F2461B8F476B68CA73906086047F
   logicalPath: config\sam_l10_xpro
   name: libc_syscalls.c
@@ -34,13 +34,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: FAF284D52C6379A0BDBD259BFB070F90
+- generatedChecksum: C288C7F4E02132D0F82E94283C6E6ED0
   logicalPath: config\sam_l10_xpro\peripheral\clock
   name: plib_clock.c
   physicalPath: peripheral\clock
   security: NON_SECURE
   type: SOURCE
-  userChecksum: FAF284D52C6379A0BDBD259BFB070F90
+  userChecksum: C288C7F4E02132D0F82E94283C6E6ED0
+- generatedChecksum: C18B8A38985ECB0DD029A40D09F9729E
+  logicalPath: config\sam_l10_xpro\peripheral\eic
+  name: plib_eic.c
+  physicalPath: peripheral\eic
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: C18B8A38985ECB0DD029A40D09F9729E
 - generatedChecksum: C3ECDED3D6301DB0DE622293ED615D21
   logicalPath: config\sam_l10_xpro\peripheral\evsys
   name: plib_evsys.c
@@ -48,34 +55,62 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: C3ECDED3D6301DB0DE622293ED615D21
-- generatedChecksum: D984FDA7A2C6E878F8BFA27EF0A658A6
+- generatedChecksum: 5A51B01439999C7304CA20BE575C4266
   logicalPath: config\sam_l10_xpro\peripheral\nvic
   name: plib_nvic.c
   physicalPath: peripheral\nvic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: D984FDA7A2C6E878F8BFA27EF0A658A6
-- generatedChecksum: 3E5669CAC60931813D1B8CF65D1F07E9
+  userChecksum: 5A51B01439999C7304CA20BE575C4266
+- generatedChecksum: A36D4B6719874DF2D06AC8D6623588B7
   logicalPath: config\sam_l10_xpro\peripheral\nvmctrl
   name: plib_nvmctrl.c
   physicalPath: peripheral\nvmctrl
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3E5669CAC60931813D1B8CF65D1F07E9
-- generatedChecksum: 295EC4F84D0FFCF4D1DA1954720E7FA9
+  userChecksum: A36D4B6719874DF2D06AC8D6623588B7
+- generatedChecksum: E8E9F3F00DBEACAD07AE699201AC25EE
   logicalPath: config\sam_l10_xpro\peripheral\pm
   name: plib_pm.c
   physicalPath: peripheral\pm
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 295EC4F84D0FFCF4D1DA1954720E7FA9
-- generatedChecksum: C2E2F4808CC700D7A5B54D7C21F146F3
+  userChecksum: E8E9F3F00DBEACAD07AE699201AC25EE
+- generatedChecksum: DB919C13BD0EA23CD3CDCEF9B636EFF4
   logicalPath: config\sam_l10_xpro\peripheral\port
   name: plib_port.c
   physicalPath: peripheral\port
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C2E2F4808CC700D7A5B54D7C21F146F3
+  userChecksum: DB919C13BD0EA23CD3CDCEF9B636EFF4
+- generatedChecksum: 51BA2CAD39EEB90531C8545B7A35AC22
+  logicalPath: config\sam_l10_xpro\peripheral\rstc
+  name: plib_rstc.c
+  physicalPath: peripheral\rstc
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 51BA2CAD39EEB90531C8545B7A35AC22
+- generatedChecksum: 4FB1E0D8F8747F6F2B5E8BBC71B669A3
+  logicalPath: config\sam_l10_xpro\peripheral\sercom\usart
+  name: plib_sercom0_usart.c
+  physicalPath: peripheral\sercom\usart
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 4FB1E0D8F8747F6F2B5E8BBC71B669A3
+- generatedChecksum: 9DAC08F7AF82A65BC47687D94558B480
+  logicalPath: config\sam_l10_xpro\peripheral\supc
+  name: plib_supc.c
+  physicalPath: peripheral\supc
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 9DAC08F7AF82A65BC47687D94558B480
+- generatedChecksum: C876B556D1892FA358EA621CF1B6257E
+  logicalPath: config\sam_l10_xpro\peripheral\systick
+  name: plib_systick.c
+  physicalPath: peripheral\systick
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: C876B556D1892FA358EA621CF1B6257E
 - generatedChecksum: 2645E564BD945DAED1424FD8D7B39330
   logicalPath: config\sam_l10_xpro
   name: startup_xc32.c
@@ -83,13 +118,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2645E564BD945DAED1424FD8D7B39330
-- generatedChecksum: 7806B30ECAE0D18D08CD583D8775530D
+- generatedChecksum: BF53CCDA943397CF00697521A2939B3C
   logicalPath: config\sam_l10_xpro\stdio
   name: xc32_monitor.c
   physicalPath: stdio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 7806B30ECAE0D18D08CD583D8775530D
+  userChecksum: BF53CCDA943397CF00697521A2939B3C
 - generatedChecksum: 58491A337BDD1328F7AEA74636A53A2B
   logicalPath: packs\ATSAML10E16A_DFP\component
   name: ac.h
@@ -209,13 +244,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: BC23AF77902C320207D397FE70C8CD4F
-- generatedChecksum: 2EC49F6771FF3BCD4A6852F724D0E6BD
+- generatedChecksum: 7EBF610D7C01DA035C85B513946CF798
   logicalPath: config\sam_l10_xpro
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 2EC49F6771FF3BCD4A6852F724D0E6BD
+  userChecksum: 7EBF610D7C01DA035C85B513946CF798
 - generatedChecksum: 39E05A5B598D6E3B8B757EB5B466B989
   logicalPath: config\sam_l10_xpro
   name: device.h
@@ -335,13 +370,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 7C7C32BBD28E3F7E0E83EFD343AA17ED
-- generatedChecksum: A85BC680A07148638C4FD2AD0DF14C04
+- generatedChecksum: 7C312A053637595959E1560A6CAC0073
   logicalPath: config\sam_l10_xpro
   name: interrupts.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: A85BC680A07148638C4FD2AD0DF14C04
+  userChecksum: 7C312A053637595959E1560A6CAC0073
 - generatedChecksum: A868C48D7797CE191F6A03DE0515B5AA
   logicalPath: packs\ATSAML10E16A_DFP\component
   name: mclk.h
@@ -440,6 +475,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: BB4FAC4F00C0D5A94EC40CE92DE7B515
+- generatedChecksum: 51195DF51995BC40151BF8074ABAA97B
+  logicalPath: config\sam_l10_xpro\peripheral\eic
+  name: plib_eic.h
+  physicalPath: peripheral\eic
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 51195DF51995BC40151BF8074ABAA97B
 - generatedChecksum: CCAEF942C66AF995876DFD85CEFF611F
   logicalPath: config\sam_l10_xpro\peripheral\evsys
   name: plib_evsys.h
@@ -468,13 +510,48 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 8C396397F7AACEFD9F327A14A8ED33F1
-- generatedChecksum: DF291B6D2C7515F45AB9F62247AC6550
+- generatedChecksum: DE831C27B1F73667031A8B5A030D196A
   logicalPath: config\sam_l10_xpro\peripheral\port
   name: plib_port.h
   physicalPath: peripheral\port
   security: NON_SECURE
   type: HEADER
-  userChecksum: DF291B6D2C7515F45AB9F62247AC6550
+  userChecksum: DE831C27B1F73667031A8B5A030D196A
+- generatedChecksum: 1BC135F91B729FD2F97B7771C6D4D25E
+  logicalPath: config\sam_l10_xpro\peripheral\rstc
+  name: plib_rstc.h
+  physicalPath: peripheral\rstc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 1BC135F91B729FD2F97B7771C6D4D25E
+- generatedChecksum: 9E847139EB4A35248CEAA3CF830D18DD
+  logicalPath: config\sam_l10_xpro\peripheral\sercom\usart
+  name: plib_sercom0_usart.h
+  physicalPath: peripheral\sercom\usart
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 9E847139EB4A35248CEAA3CF830D18DD
+- generatedChecksum: 6F9F9CBBFEDEC8784446F157BB625E1C
+  logicalPath: config\sam_l10_xpro\peripheral\sercom\usart
+  name: plib_sercom_usart_common.h
+  physicalPath: peripheral\sercom\usart
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 6F9F9CBBFEDEC8784446F157BB625E1C
+- generatedChecksum: E986011C3F2B5BC9CDA66D3C9162E91C
+  logicalPath: config\sam_l10_xpro\peripheral\supc
+  name: plib_supc.h
+  physicalPath: peripheral\supc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: E986011C3F2B5BC9CDA66D3C9162E91C
+- generatedChecksum: FFFF0D04228D019BDF59FFC88F36489E
+  logicalPath: config\sam_l10_xpro\peripheral\systick
+  name: plib_systick.h
+  physicalPath: peripheral\systick
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: FFFF0D04228D019BDF59FFC88F36489E
 - generatedChecksum: D3458AC8B4E92E186BE69DDB8185B1F3
   logicalPath: packs\ATSAML10E16A_DFP\component
   name: pm.h

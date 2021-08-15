@@ -1,0 +1,13 @@
+DRC Rules Export File for PCB: D:\ALTIUM_WORK\00001_MCHP-CDB\Boards\Boards\16-07349\PCB Files\Rev5\Project Files\SAM L10\04-07349-R5_L10.PcbDoc
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion_USB|Scope=Board|Minimum=1.38
+RuleKind=Clearance|RuleName=Clearance_touch|Scope=Board|Minimum=23.62
+RuleKind=Clearance|RuleName=Clearance_Poly_Impedance|Scope=Board|Minimum=23.62
+RuleKind=Clearance|RuleName=Clearance_Poly|Scope=Board|Minimum=6.89
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=5.91
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=5.91
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskTenting|Scope=Board|Minimum=-39.37
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=1.97
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=MinimumAnnularRing|RuleName=MinimumAnnularRing|Scope=Board|Minimum=3.94
+RuleKind=Clearance|RuleName=Clearance_EDBG|Scope=Board|Minimum=4.68
+RuleKind=Width|RuleName=EDBG_Width|Scope=Board|Minimum=4.92

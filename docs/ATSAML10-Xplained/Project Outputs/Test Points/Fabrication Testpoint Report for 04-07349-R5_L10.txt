@@ -1,0 +1,36 @@
+Net         Name        X Coord     Y Coord     Side        Hole Size   Type        
+VCC_CM_CORE Free-3       -39.325mm     -37.7mm  Bottom             0mm  Surface mount
+NetQ500_1   Free-3      -56.5485mm    -20.95mm  Bottom             0mm  Surface mount
+VCC_CM_VDDANAFree-3         -54.2mm    -37.65mm  Bottom             0mm  Surface mount
+CM_PA08_AIN16Free-3       -53.975mm     -33.5mm  Bottom             0mm  Surface mount
+NetC502_2   Free-3       -59.025mm    -27.45mm  Bottom             0mm  Surface mount
+DGI_GPIO3   Free-3      -11.7998mm  -28.8997mm  Bottom             0mm  Surface mount
+DGI_GPIO2   Free-3      -13.0748mm  -28.8997mm  Bottom             0mm  Surface mount
+DGI_GPIO1   Free-3      -14.3498mm  -28.8997mm  Bottom             0mm  Surface mount
+DGI_GPIO0   Free-3      -15.6249mm  -28.8997mm  Bottom             0mm  Surface mount
+NetR222_2   Free-3         -24.6mm  -28.8992mm  Bottom             0mm  Surface mount
+EDBG_SPI_DGI_SSFree-3       -33.345mm  -28.4097mm  Bottom             0mm  Surface mount
+EDBG_SPI_DGI_MISOFree-3       -34.591mm  -28.8997mm  Bottom             0mm  Surface mount
+EDBG_SPI_DGI_MOSIFree-3       -35.836mm  -28.4097mm  Bottom             0mm  Surface mount
+EDBG_SPI_DGI_SCKFree-3       -37.081mm  -28.8997mm  Bottom             0mm  Surface mount
+PA15_S0_SPI_SCKFree-3      -37.0751mm   -32.625mm  Bottom             0mm  Surface mount
+PA14_S0_SPI_MOSIFree-3       -35.836mm  -33.1303mm  Bottom             0mm  Surface mount
+PA04_S0_SPI_MISOFree-3       -34.591mm  -32.6503mm  Bottom             0mm  Surface mount
+PA07_LED_PWM_TC0Free-3       -33.345mm  -33.1303mm  Bottom             0mm  Surface mount
+PA24_UART_TXFree-3      -32.0951mm  -32.6503mm  Bottom             0mm  Surface mount
+PA25_UART_RXFree-3        -30.85mm  -33.1403mm  Bottom             0mm  Surface mount
+NetQ200_3   Free-3        -2.575mm      -6.3mm  Bottom             0mm  Surface mount
+NetQ200_6   Free-3        -2.425mm    -13.45mm  Bottom             0mm  Surface mount
+NetC204_1   Free-3      -18.7574mm   -19.575mm  Bottom             0mm  Surface mount
+NetQ601_3   Free-3      -50.2061mm     -9.68mm  Bottom             0mm  Surface mount
+NetQ500_2   Free-3       -58.675mm   -21.575mm  Bottom             0mm  Surface mount
+CURRENT_MEASURE_OUTFree-3       -48.125mm   -15.425mm  Bottom             0mm  Surface mount
+VCC_FILTER_P3V3Free-3       -52.625mm   -21.745mm  Bottom             0mm  Surface mount
+CM_PA03_VREFAFree-3        -48.65mm    -41.05mm  Bottom             0mm  Surface mount
+NetQ500_3   Free-3       -51.375mm   -21.175mm  Bottom             0mm  Surface mount
+CM_PA15_GPIOFree-3      -50.6488mm  -27.1238mm  Bottom             0mm  Surface mount
+VREF_FB     Free-3         -40.6mm  -41.2886mm  Bottom             0mm  Surface mount
+NetC505_1   Free-3        -57.95mm   -24.175mm  Bottom             0mm  Surface mount
+VCC_PRE_AMP_P5V0Free-3       -58.575mm    -17.85mm  Bottom             0mm  Surface mount
+NetQ501_2   Free-3        -46.85mm     -15.4mm  Bottom             0mm  Surface mount
+VCC_EDBG_USB_P5V0Free-3       -21.625mm   -15.875mm  Bottom             0mm  Surface mount
