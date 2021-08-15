@@ -1,8 +1,15 @@
 *.zip
 *bak
 
-code/Debug
-code/Release
+STM32F446-code/Debug/*
+STM32F446-code/Release/*
+
+ATSAML10-code/sam_l10_xpro.X/dist/
+ATSAML10-code/sam_l10_xpro.X/build/
+ATSAML10-code/sam_l10_xpro.X/production/
+ATSAML10-code/sam_l10_xpro.X/.generated_files/
+
+test/results.json
 
 *.pyc
 

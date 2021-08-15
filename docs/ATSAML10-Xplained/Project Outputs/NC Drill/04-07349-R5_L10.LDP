@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: D:\ALTIUM_WORK\00001_MCHP-CDB\Boards\Boards\16-07349\PCB Files\Rev5\Project Files\SAM L10\04-07349-R5_L10.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=04-07349-r5_l10-roundholes.txt|DrillLayers=gtl,gp1,gp2,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=04-07349-r5_l10-slotholes.txt|DrillLayers=gtl,gp1,gp2,gbl
