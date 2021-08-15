@@ -5,7 +5,6 @@ for streaming in external clock stream mode.
 
 from datetime import datetime
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
 import sys
 import threading
 import time
@@ -130,6 +129,8 @@ if __name__ == "__main__":
                         help='Total boolean samples to collect (default: 100,000,000)')
     parser.add_argument('--rate', '-r', type=int, default=20000,
                         help='Sample rate in Hz (default: 20,000)')
+    parser.add_argument('--plot', '-p', action='count', default=0,
+                        help='Plot histogram as samples are collected')
     args = parser.parse_args()
 
     if args.rate > 40000 or args.rate < 0:
@@ -186,19 +187,21 @@ if __name__ == "__main__":
         printWithLock("Waiting until eStreamRead has been called %d times."
             % si.numberOfReadsToPerform)
 
-        fig = plt.figure()
-        hist = plt.hist(si.byte_samps, bins=256)
-        plt.ion()
-        plt.show()
+        if args.plot:
+            fig = plt.figure()
+            hist = plt.hist(si.byte_samps, bins=256)
+            plt.ion()
+            plt.show()
 
         while (si.streamRead < si.numberOfReadsToPerform):
             # While we're collecting data update the histogram
-            plt.cla()
-            plt.hist(si.byte_samps, bins=256)
-            plt.title("%d Byte Samples" % (len(si.byte_samps)))
-            plt.ylabel("Counts")
-            plt.xlabel("Byte Values")
-            plt.pause(.001)
+            if args.plot:
+                plt.cla()
+                plt.hist(si.byte_samps, bins=256)
+                plt.title("%d Byte Samples" % (len(si.byte_samps)))
+                plt.ylabel("Counts")
+                plt.xlabel("Byte Values")
+                plt.pause(.001)
 
             time.sleep(.1)
 
@@ -232,7 +235,4 @@ if __name__ == "__main__":
     filename = ('entropy-%dSaps-' % args.rate) + filename
     with open(filename, 'wb') as f:
         f.write(bytearray(si.byte_samps))
-
-    plt.ioff()
-    plt.show()
 
