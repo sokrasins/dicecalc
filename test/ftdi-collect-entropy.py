@@ -45,9 +45,9 @@ class EntropyCollector:
                 bool_array[idx] = byte & 1
                 byte = byte >> 1
                 idx += 1
-        
+
         return bool_array
-        
+
 
     def close(self):
         self.ser.close()

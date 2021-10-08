@@ -10,6 +10,7 @@ ATSAML10-code/sam_l10_xpro.X/production/
 ATSAML10-code/sam_l10_xpro.X/.generated_files/
 
 test/results.json
+test/*.png
 
 *.pyc
 
